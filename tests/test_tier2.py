@@ -8,6 +8,7 @@ documents the limitation honestly.
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 import pytest
@@ -48,12 +49,19 @@ def test_tier1_cannot_see_paraphrases():
     assert len(flagged & paraphrased) < len(paraphrased) or True
 
 
+# CI's tier2 job sets OPENTRUST_REQUIRE_TIER2=1 so a missing model fails the build
+# instead of quietly skipping the one test that proves the embedding model is used.
+REQUIRE_TIER2 = os.environ.get("OPENTRUST_REQUIRE_TIER2") == "1"
+
+
 @pytest.mark.skipif(
-    embedding_similarity(["probe a", "probe b"]) is None,
+    not REQUIRE_TIER2 and embedding_similarity(["probe a", "probe b"]) is None,
     reason="Tier 2 needs a local embedding model (ollama pull qwen3-embedding:0.6b)",
 )
 def test_tier2_catches_paraphrased_payloads():
     from opentrust.campaign import detect_campaigns
+
+    assert embedding_similarity(["probe a", "probe b"]) is not None, "embedding model not reachable"
 
     labels = json.loads((NETWORK / "labels.json").read_text())
     paraphrased = set(labels.get("campaign_paraphrased", []))

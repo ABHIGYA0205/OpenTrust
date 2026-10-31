@@ -135,7 +135,7 @@ standing, or a project's declared onboarding path.
 | Model | Runs on | Job | Why |
 | --- | --- | --- | --- |
 | `qwen3:4b-instruct-2507-q4_K_M` | Ollama, localhost | Parse free-text vouch/denounce reasons into structured scope labels and evidence strength; draft the incident narrative from code-computed numbers | Best local trade-off on short structured extraction at 4-bit |
-| `qwen3-embedding:0.6b` | Ollama, localhost | Tier-2 semantic PR similarity, to catch paraphrased campaign payloads | Strong paraphrase retrieval at 137M params, CPU-friendly |
+| `qwen3-embedding:0.6b` | Ollama, localhost | Tier-2 semantic PR similarity, to catch paraphrased campaign payloads | Strong paraphrase retrieval at 0.6B params (639 MB), CPU-friendly |
 
 **No verdict is produced by a model.** Trust propagation, reputation scoring, campaign
 scoring and quarantine decisions are deterministic algorithms over signed records.

@@ -33,3 +33,63 @@ jobs:
           opentrust --help
           opentrust keygen --project demo --out /tmp/demo
           opentrust sync --manifest network/manifest.json
+
+  # Runs the real open-weight models on localhost, the same way a maintainer would.
+  # HACKATHON.md promises the embedding tests use the real model, not a mock.
+  tier2:
+    runs-on: ubuntu-latest
+    env:
+      OLLAMA_MODELS: ${{ github.workspace }}/.ollama-models
+      OPENTRUST_REQUIRE_TIER2: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install project
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Cache Ollama models
+        uses: actions/cache@v4
+        with:
+          path: .ollama-models
+          key: ollama-qwen3-4b-instruct-2507-q4_K_M-qwen3-embedding-0.6b
+
+      - name: Install and start Ollama
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh
+          # The installer starts a system service; stop it so our server uses the cached model dir.
+          sudo systemctl stop ollama || true
+          nohup ollama serve > /tmp/ollama.log 2>&1 &
+          for i in $(seq 1 30); do curl -sf http://localhost:11434/api/tags && break; sleep 1; done
+
+      - name: Pull models
+        run: |
+          ollama pull qwen3-embedding:0.6b
+          ollama pull qwen3:4b-instruct-2507-q4_K_M
+
+      - name: Both models report LIVE
+        run: |
+          opentrust models | tee /tmp/models.txt
+          grep -q "both models reachable" /tmp/models.txt
+
+      - name: Tier-2 tests against the real embedding model
+        run: pytest -q -rs tests/test_tier2.py
+
+      - name: Real model call (reason parsing)
+        run: |
+          opentrust analyse --kind denounce \
+            --reason "Opened 30 identical README typo PRs across unrelated repos within an hour, see https://github.com/p/pull/311" \
+            | tee /tmp/analyse.json
+          grep -q '"source": "llm"' /tmp/analyse.json
+
+      - name: Evaluation with Tier 2
+        run: python tools/evaluate.py --tier2
+
+      - name: Ollama log on failure
+        if: failure()
+        run: tail -100 /tmp/ollama.log
