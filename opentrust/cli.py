@@ -175,6 +175,7 @@ def cmd_score(args: argparse.Namespace) -> int:
                     "verdict": result.verdict,
                     "score": round(result.score, 4),
                     "has_history": result.has_history,
+                    "allegation": result.allegation,
                     "contributions": [
                         {
                             "kind": c.kind,

@@ -4,6 +4,12 @@
                    - sum over live denounces of trust[issuer] * severity * corroboration
                      (only when trust[issuer] >= policy.min_denounce_trust)
 
+One denouncement is an allegation, not a verdict. A score can only reach
+"quarantined" when the denouncement is corroborated by another independent trusted
+project, comes with strong enough evidence, or was issued by the viewer itself.
+Otherwise the verdict stays "unknown" and the result is marked as an allegation, so
+maintainers still see it.
+
 Every term is recorded on the result object, so any verdict can be explained line by
 line. Nothing here consults a language model.
 """
@@ -18,7 +24,7 @@ from . import crypto
 from .policy import Policy
 from .records import SCOPES
 
-__all__ = ["Contribution", "IgnoredRecord", "SubjectScore", "score_subject"]
+__all__ = ["Contribution", "IgnoredRecord", "SubjectScore", "evidence_strength", "score_subject"]
 
 SEVERITY_WEIGHT = {"low": 0.5, "medium": 1.0, "high": 1.5}
 
@@ -52,6 +58,9 @@ class SubjectScore:
     contributions: list[Contribution] = field(default_factory=list)
     ignored: list[IgnoredRecord] = field(default_factory=list)
     has_history: bool = False
+    # True when denouncements pushed the score past quarantine_at but did not meet
+    # the bar for acting on them alone.
+    allegation: bool = False
 
     @property
     def positives(self) -> list[Contribution]:
@@ -67,6 +76,11 @@ class SubjectScore:
             f"Viewpoint: {self.viewer}",
             f"Verdict  : {self.verdict.upper()}   (score {self.score:+.3f})",
         ]
+        if self.allegation:
+            lines.append(
+                "Allegation: one uncorroborated denouncement with weak evidence. "
+                "Shown for review, not enforced."
+            )
         if not self.has_history:
             lines.append("History  : no records — status is UNKNOWN, which is not a rejection.")
         if self.positives:
@@ -96,6 +110,20 @@ def _recency(issued_at: str, now: datetime, half_life_days: float) -> float:
     except (ValueError, AttributeError):
         return 1.0
     return 0.5 ** (age_days / half_life_days) if half_life_days > 0 else 1.0
+
+
+def evidence_strength(record: dict) -> float:
+    """How checkable a denouncement is, in [0, 1].
+
+    Uses the strength stored when the record was written (from the local model, or
+    its keyword fallback). Older records without one count as checkable only if
+    they link to something.
+    """
+    stored = record.get("evidence_strength")
+    if isinstance(stored, (int, float)):
+        return float(stored)
+    links = [e for e in record.get("evidence", []) if str(e).startswith(("http://", "https://"))]
+    return 0.6 if links else 0.2
 
 
 def _scope_weight(scopes: list[str], policy: Policy) -> float:
@@ -133,7 +161,7 @@ def score_subject(
         if record.get("subject") != subject:
             continue
         expires = record.get("expires_at")
-        if expires and record.get("type") == "vouch":
+        if expires:
             try:
                 if _parse(expires) < now:
                     continue
@@ -237,7 +265,16 @@ def score_subject(
     elif result.score >= policy.trusted_at:
         result.verdict = "trusted"
     elif result.score <= policy.quarantine_at:
-        result.verdict = "quarantined"
+        actionable = (
+            len(independent_issuers) >= 2
+            or viewer in independent_issuers
+            or any(evidence_strength(r) >= policy.min_solo_evidence for r in qualifying)
+        )
+        if actionable:
+            result.verdict = "quarantined"
+        else:
+            result.verdict = "unknown"
+            result.allegation = True
     else:
         result.verdict = "unknown"
     return result
