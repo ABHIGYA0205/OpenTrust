@@ -25,6 +25,9 @@ class Policy:
     # no effect. This is what makes "X's denounce is ignored" structural rather
     # than a special case.
     min_denounce_trust: float = 0.10
+    # A single trusted project's denouncement can only quarantine someone on its own
+    # if its evidence is at least this strong. Below that it is an allegation.
+    min_solo_evidence: float = 0.5
     # Verdict boundaries on the reputation score. A vouch from one well-connected
     # trusted peer is worth roughly 0.2 after EigenTrust normalisation, so 0.15 is
     # "one trusted peer vouching is enough" rather than an arbitrary cut.

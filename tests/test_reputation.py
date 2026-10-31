@@ -153,3 +153,73 @@ def test_expired_vouch_is_not_counted():
     )
     result = score_subject([old], {"proj-b": 0.9}, Policy(), "github:@alice", "proj-a", NOW)
     assert result.verdict == "unknown"
+
+
+# --- "One denouncement is an allegation, not a verdict" (HACKATHON.md) -------------
+
+
+def _denounce(issuer: str, strength: float | None, **extra) -> dict:
+    record = records.build_denounce(
+        issuer=issuer,
+        subject="github:@accused",
+        reason="Low quality contribution.",
+        evidence=["https://example.com/pr/1"],
+        severity="high",
+        issued_at="2026-10-31T00:00:00Z",
+    )
+    if strength is not None:
+        record["evidence_strength"] = strength
+    record.update(extra)
+    return sign(record)
+
+
+def test_single_weak_denouncement_is_an_allegation_not_a_block():
+    result = score_subject(
+        [_denounce("proj-b", 0.2)], {"proj-b": 0.9}, Policy(), "github:@accused", "proj-a", NOW
+    )
+    assert result.score <= Policy().quarantine_at, "the score still shows the concern"
+    assert result.verdict == "unknown"
+    assert result.allegation
+    assert "Allegation" in result.explain()
+
+
+def test_single_denouncement_with_strong_evidence_can_quarantine():
+    result = score_subject(
+        [_denounce("proj-b", 0.9)], {"proj-b": 0.9}, Policy(), "github:@accused", "proj-a", NOW
+    )
+    assert result.verdict == "quarantined"
+    assert not result.allegation
+
+
+def test_two_independent_weak_denouncements_corroborate():
+    result = score_subject(
+        [_denounce("proj-b", 0.2), _denounce("proj-c", 0.2)],
+        {"proj-b": 0.5, "proj-c": 0.5},
+        Policy(),
+        "github:@accused",
+        "proj-a",
+        NOW,
+    )
+    assert result.verdict == "quarantined"
+
+
+def test_your_own_denouncement_is_always_actionable():
+    result = score_subject(
+        [_denounce("proj-a", 0.1)], {}, Policy(), "github:@accused", "proj-a", NOW
+    )
+    assert result.verdict == "quarantined"
+
+
+def test_records_without_stored_strength_need_a_link():
+    linked = _denounce("proj-b", None)
+    unlinked = _denounce("proj-b", None, evidence=["VOUCHED.td#L4"])
+    weights = {"proj-b": 0.9}
+    assert score_subject([linked], weights, Policy(), "github:@accused", "proj-a", NOW).verdict == "quarantined"
+    assert score_subject([unlinked], weights, Policy(), "github:@accused", "proj-a", NOW).allegation
+
+
+def test_expired_denouncement_no_longer_counts():
+    expired = _denounce("proj-b", 0.9, expires_at="2026-10-31T12:00:00Z")
+    result = score_subject([expired], {"proj-b": 0.9}, Policy(), "github:@accused", "proj-a", NOW)
+    assert result.verdict == "unknown"
+    assert not result.has_history
