@@ -1,0 +1,24 @@
+$ opentrust import-td --project proj-b --file proj-b.VOUCHED.td
+imported proj-b.VOUCHED.td into proj-b: vouches 2, denouncements 1, already present 0
+$ opentrust import-td --project proj-x --file proj-x.VOUCHED.td
+imported proj-x.VOUCHED.td into proj-x: vouches 0, denouncements 1, already present 0
+
+$ opentrust score --subject github:@new-dev --viewer proj-a
+Subject  : github:@new-dev
+Viewpoint: proj-a
+Verdict  : TRUSTED   (score +0.459)
+Counted vouches:
+  + 0.459  vouch by proj-b (trust 0.459, scope code_quality) — Fixed the worker-pool leak in #128 and added a regression test
+Ignored statements (issuer carries no weight from this viewpoint):
+  · [denounce] proj-x (trust 0.000) — issuer trust 0.000 is below the min_denounce_trust 0.10
+
+trust weights as seen by proj-a:
+  proj-a         0.541
+  proj-b         0.459
+
+$ opentrust export-td --project proj-b
+# Vouch list exported by OpenTrust from project proj-b.
+# Every line below is backed by a signed record in trust/records/.
+github:new-dev Fixed the worker-pool leak in #128 and added a regression test
+-github:slop-account Opened 30 copy-paste README PRs in an hour, see https://github.com/example/proj-b/pull/311
+github:steady-reviewer Reviewed security fixes for two releases

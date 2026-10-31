@@ -78,6 +78,17 @@ python tools/evaluate.py --network network
 | `opentrust campaigns --incoming DIR [--window 120] [--min-cohort 5] [--tier2] [--json]` | Detect coordinated campaigns |
 | `opentrust report --manifest FILE --subject WHO --viewer PROJECT --out FILE` | Markdown report |
 | `opentrust graph --manifest FILE --viewer PROJECT` | Trust graph as Graphviz DOT |
+| `opentrust import-td --project ID --out DIR --file VOUCHED.td [--no-llm]` | Sign an existing Vouch list into a project |
+| `opentrust export-td --manifest FILE --project ID` | Print a project's list in Vouch's `VOUCHED.td` format |
+
+### Works with Vouch lists
+
+Projects that already use Ghostty's [Vouch](https://github.com/mitchellh/vouch) don't
+have to start over. `import-td` reads a `VOUCHED.td` file (`handle`, `platform:handle`,
+`-handle` to denounce, a note after the handle) and signs each line as an OpenTrust
+record. A denouncement with no link in its note can't be checked by anyone else, so it
+comes in at `low` severity. `export-td` goes the other way, so a project can keep
+publishing a list that Vouch itself understands. See `examples/vouch/`.
 
 Exit codes: `0` nothing found, `1` campaign detected (so this can gate CI), `2` error.
 
@@ -181,6 +192,7 @@ opentrust/
   similarity.py  Tier-1 MinHash, Tier-2 local embeddings
   campaign.py    cohort clustering, burstiness, campaign scoring
   explain.py     human-readable rendering
+  vouchfile.py   import/export of Vouch VOUCHED.td lists
   cli.py         command line interface
 tools/
   gen_network.py simulated 40-project network with campaign + newcomers

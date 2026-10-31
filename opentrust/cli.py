@@ -8,6 +8,8 @@
     opentrust score    --manifest network/manifest.json --subject github:@new-dev --viewer proj-a
     opentrust campaigns --incoming network/incoming --window 120 --min-cohort 5
     opentrust report   --manifest network/manifest.json --subject github:@new-dev --out out/report.md
+    opentrust import-td --project proj-a --out network/proj-a --file VOUCHED.td
+    opentrust export-td --manifest network/manifest.json --project proj-a
 """
 
 from __future__ import annotations
@@ -27,6 +29,7 @@ from .reputation import score_subject
 from .signals import PR
 from .store import Store, load_network
 from .similarity import embedding_similarity
+from .vouchfile import export_td, import_td
 
 __all__ = ["main"]
 
@@ -302,6 +305,23 @@ def cmd_network_graph(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_import_td(args: argparse.Namespace) -> int:
+    store = _store(args)
+    path = Path(args.file)
+    counts = import_td(store, path.read_text(), source=path.name, use_llm=not args.no_llm)
+    print(f"imported {path.name} into {args.project}: vouches {counts['vouch']}, "
+          f"denouncements {counts['denounce']}, already present {counts['skipped']}")
+    return 0
+
+
+def cmd_export_td(args: argparse.Namespace) -> int:
+    network = load_network(args.manifest)
+    if args.project not in network.projects:
+        sys.exit(f"no project {args.project!r} in {args.manifest}")
+    print(export_td(network.projects[args.project]), end="")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="opentrust", description=__doc__.split("\n")[0])
     parser.add_argument("--version", action="version", version="opentrust 0.1.0")
@@ -380,6 +400,18 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--manifest", required=True)
     p.add_argument("--viewer", required=True)
     p.set_defaults(func=cmd_network_graph)
+
+    p = sub.add_parser("import-td", help="sign a Vouch VOUCHED.td file into a project")
+    p.add_argument("--project", required=True)
+    p.add_argument("--out", required=True)
+    p.add_argument("--file", required=True)
+    p.add_argument("--no-llm", action="store_true")
+    p.set_defaults(func=cmd_import_td)
+
+    p = sub.add_parser("export-td", help="print a project's list in Vouch's VOUCHED.td format")
+    p.add_argument("--manifest", required=True)
+    p.add_argument("--project", required=True)
+    p.set_defaults(func=cmd_export_td)
 
     return parser
 
