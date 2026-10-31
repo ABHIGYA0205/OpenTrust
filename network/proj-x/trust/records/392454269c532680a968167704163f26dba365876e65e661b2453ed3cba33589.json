@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-x/pull/358"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-x",
+  "issuer_key": "cQfceTbU7J/BVYYjBOCtHk2x5J/v9YVpedV8nkBspHY=",
+  "prev": "sha256:1e1742397a7c38b8fa72ed879650707f4289c5896da26cc3f218e3c5200530b6",
+  "reason": "Reviewed 5 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "9i07TK4uBM0nqJ2Xzp04DiAYhaupXHtlNgrAk/P+Y0H9qwIoCm4cllX5Ya7Lq4UumqBgNwbVMKlhIOwabxqpDA==",
+  "subject": "github:@alice",
+  "type": "vouch"
+}

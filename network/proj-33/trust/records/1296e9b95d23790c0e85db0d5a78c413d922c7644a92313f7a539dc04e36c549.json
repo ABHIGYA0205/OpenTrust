@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-33/pull/138"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-33",
+  "issuer_key": "WHmVwXfpd1PggWr4s0WywgWJ8hNHz6KtbCTuloZZGzc=",
+  "prev": "sha256:0be95e9951078c7d313680164c6faa507eaa78ebb401db698054723de8d04b36",
+  "reason": "Reviewed 2 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "9PvDuyqT8aN+R9iv8Pwr5iKdgbo/BnmBj47zSZd9btfh1WU6iAFLo3bFPR96y+h8Lc3O/kg7pMCdBZyfFrZeAQ==",
+  "subject": "github:@alice",
+  "type": "vouch"
+}

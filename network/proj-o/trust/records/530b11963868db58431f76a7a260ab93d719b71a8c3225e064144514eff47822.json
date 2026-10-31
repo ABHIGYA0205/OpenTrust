@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-o/pull/171"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-o",
+  "issuer_key": "rdh9GklZ8yMz8oY/DWTuqcB0lnM7oF3669+lgMeuyM4=",
+  "prev": "sha256:3c6ba25cfe5bad5e86b7295489d1bfa166b92eeb1fdac8502eff44fe14edf615",
+  "reason": "Reviewed 6 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "TW2C5C5HU9mT6Y6oqgnRerDTrUk4CfUVtQilZxhAJCjkTaVd5vT6/31Tny8dMjwEpbrXncKMEhmihmQ7pN03BA==",
+  "subject": "github:@chen",
+  "type": "vouch"
+}

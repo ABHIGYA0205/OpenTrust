@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-38/pull/248"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-38",
+  "issuer_key": "ewxJmIJD/Bm+kPyRGguVVeDHhWSd0/yjZkL4/DsakXA=",
+  "prev": "sha256:0efc155022ade99406fa269dde687e49959387326cd690fdca4b8bf0fae818c5",
+  "reason": "Reviewed 6 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality"
+  ],
+  "sig": "zVpJYWoRngRPVoFnL3YnXKSB/pjqieSCPVn/pfT1wJkNOqsKa3Bks8VPr+0x/zBOqPnmdwJug5m/LCkRlAF+Cw==",
+  "subject": "github:@esme",
+  "type": "vouch"
+}

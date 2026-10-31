@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-35/pull/348"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-35",
+  "issuer_key": "368npr0UM1fBdC8EzHUW7YKTiFC3BLQKj/sKOhR+PaE=",
+  "prev": "sha256:21f62634db0d461752a9c1f555b81ea2ca0dc80b6584c4eaf2f92e66102e8334",
+  "reason": "Reviewed 4 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "c8gO5B81Ma0gkwOINZyvJZC30lihK20hDlH9DTpNNZilMGjKgHVESi4XreHJVoCtQLuUzi/77LG0O+fdU9F6Cg==",
+  "subject": "github:@chen",
+  "type": "vouch"
+}

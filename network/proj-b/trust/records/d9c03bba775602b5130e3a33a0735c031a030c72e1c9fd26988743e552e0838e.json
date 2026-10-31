@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-b/pull/214"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-b",
+  "issuer_key": "wihTawB+KxMEbPqScnDT/vKB976vyHtPKKd+KWUz4Dg=",
+  "prev": "sha256:38ba27e6a66ba0293af30b47c49b4c1e90af20359a251ae23cbca8c6cbe61fca",
+  "reason": "Reviewed 6 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "i+dKhYVxTzlT4moVkEXkusIKhVdSCxR3KUfm2Md27vCPGFiqAeztKjyAPESVmBLHPmWZKIpDnNgs1tFUi5XwDA==",
+  "subject": "github:@divya",
+  "type": "vouch"
+}

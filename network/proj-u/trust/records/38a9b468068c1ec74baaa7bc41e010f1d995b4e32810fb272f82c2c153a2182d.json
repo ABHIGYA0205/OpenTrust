@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-u/pull/145"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-u",
+  "issuer_key": "d8FKqKj/r7RbNTft9855Bs3gJ2BHezsCfn58GiJVVEM=",
+  "prev": "sha256:24dd447215bcb01fd8bd270b309e3a05e29961d3516097a0da360148b5ef6d58",
+  "reason": "Reviewed 3 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality"
+  ],
+  "sig": "Vz+56wYpSh9s8FXMXsvQJzy1UkfMUv6MUdR793VHJfvenI7dQF6A8yIu5e6q1/lVyzlsobE4Twqj1pOgVgyqAw==",
+  "subject": "github:@bruno",
+  "type": "vouch"
+}

@@ -1,0 +1,10 @@
+{
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-b",
+  "issuer_key": "wihTawB+KxMEbPqScnDT/vKB976vyHtPKKd+KWUz4Dg=",
+  "prev": "sha256:b170df226e4eed00f93837f4ac760156ac49cdb0463f2de299d461bd9a4cbc58",
+  "sig": "J+uLE4fGYDbYbh+fndKuFqr1QVxuliRDH0ISGFiVey9+KZJwsxUnFydXBxxMImd5f/gIFBy2/GusiQ/aahutBA==",
+  "target_project": "proj-d",
+  "type": "trust_edge",
+  "weight": 0.82
+}

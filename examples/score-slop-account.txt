@@ -1,0 +1,13 @@
+Subject  : github:@slop-account
+Viewpoint: proj-a
+Verdict  : QUARANTINED   (score -4.079)
+Counted denouncements:
+  - 3.148  denounce by proj-a (trust 1.000, severity high, corroboration x2.10) — Identical docs-only PR sent to dozens of projects in one hour.
+  - 0.474  denounce by proj-b (trust 0.151, severity high, corroboration x2.10) — Identical docs-only PR sent to dozens of projects in one hour.
+  - 0.457  denounce by proj-c (trust 0.145, severity high, corroboration x2.10) — Identical docs-only PR sent to dozens of projects in one hour.
+
+trust weights as seen by proj-a:
+  proj-a         0.541
+  proj-d         0.164
+  proj-b         0.151
+  proj-c         0.145

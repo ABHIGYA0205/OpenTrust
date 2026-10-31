@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-d/pull/334"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-d",
+  "issuer_key": "2UaVd+eIoQVRRtNNTfGjdobMO952CGdctnzsMdUq/r0=",
+  "prev": "sha256:41cedce49ed528207d79926a4bc66d001092fa4f197af7b6d6015a685514ca2c",
+  "reason": "Reviewed 5 merged PRs; work was sound and tested.",
+  "scope": [
+    "security_review"
+  ],
+  "sig": "tiopt1HtoEkunzHq+JkZ8s3I/3BRKDnNImTToEAyOY1xS6TgTBuj3q7xErgZ9ngM1sLfQGn+0rjhGYyzsss0DA==",
+  "subject": "github:@chen",
+  "type": "vouch"
+}

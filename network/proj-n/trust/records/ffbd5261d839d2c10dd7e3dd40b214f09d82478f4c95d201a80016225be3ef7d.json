@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-n/pull/301"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-n",
+  "issuer_key": "Qj1i6hTGSp79IqH3bEej34MF/zCH7HnhUv9pLbShwjs=",
+  "prev": "sha256:11ce753542ed0510856cceb043bbdd5649acaad54bef6551c72f22da3d3a0e8f",
+  "reason": "Reviewed 5 merged PRs; work was sound and tested.",
+  "scope": [
+    "docs"
+  ],
+  "sig": "x6b88xW+7BKQUo39BhJl71zWzre1zZIz3NCBAsps+eaV5+Gs3wODN2gEPeBA/134IIusnQHEO7z5wNUiBBneAQ==",
+  "subject": "github:@divya",
+  "type": "vouch"
+}

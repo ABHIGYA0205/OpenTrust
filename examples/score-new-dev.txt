@@ -1,0 +1,13 @@
+Subject  : github:@new-dev
+Viewpoint: proj-a
+Verdict  : TRUSTED   (score +0.151)
+Counted vouches:
+  + 0.151  vouch by proj-b (trust 0.151, scope code_quality) — Fixed a real null-dereference and added the regression test.
+Ignored statements (issuer carries no weight from this viewpoint):
+  · [denounce] proj-x (trust 0.000) — issuer trust 0.000 is below the min_denounce_trust 0.10
+
+trust weights as seen by proj-a:
+  proj-a         0.541
+  proj-d         0.164
+  proj-b         0.151
+  proj-c         0.145

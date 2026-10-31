@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-a/pull/148"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-a",
+  "issuer_key": "eLx4PJP8+VcnlAwK6hQa9uMPctvJJhv4a5R5adAXNkw=",
+  "prev": "sha256:48558446a68e7b4cf6d2f140d0b5f65c51e17bcc718772dca6dea812a0f8835d",
+  "reason": "Reviewed 6 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "tf3tS2Nu3dwEUxsQNMi8JiM8STKzDb+o3/crTL4LAOaY962V7Uh+ZwXiuGKkKZ9U4NurNNZ7hyQLSMEC6HwyBQ==",
+  "subject": "github:@bruno",
+  "type": "vouch"
+}

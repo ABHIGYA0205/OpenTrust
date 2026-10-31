@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opentrust"
+version = "0.1.0"
+description = "Decentralized trust network for open source contributions"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+  "numpy>=1.24",
+  "cryptography>=41",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+llm = ["requests>=2.31"]
+
+[project.scripts]
+opentrust = "opentrust.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["opentrust*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

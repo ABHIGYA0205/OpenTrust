@@ -1,0 +1,29 @@
+====================================================================
+EVALUATION   network=network   viewer=proj-a
+====================================================================
+projects in network           : 40
+records (signature-verified)  : 320
+incoming PRs analysed         : 50
+
+-- campaign detection -------------------------------------------------
+identical-payload PRs         :  30   caught  30   recall 100.0%
+paraphrased-payload PRs       :   8   caught   0   recall   0.0%
+legitimate PRs                :  12   flagged   0   false positives   0.0%
+campaigns reported            : 1
+    30 accounts · 30 PRs · 30 projects · mean similarity 1.00 · score 0.84
+
+-- fairness -----------------------------------------------------------
+legitimate newcomers          :  12   quarantined   0
+                             :      unknown  12   trusted   0
+
+-- reputation separation ---------------------------------------------
+denounced bad actor           : quarantined   -4.079
+vouched newcomer (@new-dev)   : trusted       +0.151
+unvouched newcomers (median)  : unknown       +0.000
+denouncements ignored (untrusted issuers): 1 on @new-dev
+
+-- model tiers --------------------------------------------------------
+tier 1 (minhash, always on)   : available
+tier 2 (local embeddings)     : unavailable (no Ollama) -- Tier 1 only
+runtime                       : 0.30s for 50 PRs
+====================================================================

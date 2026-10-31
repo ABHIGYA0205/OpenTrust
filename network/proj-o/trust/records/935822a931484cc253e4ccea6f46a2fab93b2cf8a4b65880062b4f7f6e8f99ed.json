@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-o/pull/275"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-o",
+  "issuer_key": "rdh9GklZ8yMz8oY/DWTuqcB0lnM7oF3669+lgMeuyM4=",
+  "prev": "sha256:3c6ba25cfe5bad5e86b7295489d1bfa166b92eeb1fdac8502eff44fe14edf615",
+  "reason": "Reviewed 2 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "/V5AxN9yFFD9fkz0oVzDl18GB4MhF8FDEUcqGX4NTQ3lpLq0fRsnPZpMB963Y4BRemEVmU2IAcRXsy+kUrbiBg==",
+  "subject": "github:@esme",
+  "type": "vouch"
+}

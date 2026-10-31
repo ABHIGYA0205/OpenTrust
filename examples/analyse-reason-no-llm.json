@@ -1,0 +1,9 @@
+{
+  "scope": [
+    "code_quality"
+  ],
+  "evidence_strength": 0.9,
+  "rationale": "References a concrete artefact (link, reproduction, or advisory).",
+  "source": "fallback",
+  "model": null
+}

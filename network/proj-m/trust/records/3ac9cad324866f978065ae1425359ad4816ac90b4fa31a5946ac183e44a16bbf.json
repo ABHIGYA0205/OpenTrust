@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-m/pull/109"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-m",
+  "issuer_key": "kRNx2hzm1Fu1oZPrsS3qgbvFkHsre8X6OTuxklA1NtA=",
+  "prev": "sha256:59855f789eaade04bd12155bf2922762669e04c1d9fc832c97790084eae9c733",
+  "reason": "Reviewed 1 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality"
+  ],
+  "sig": "Kiz4CWxV/wNyV1R9iYYSPGK2k0jCmgXuYzKQPyGia0tbOjwNP2KVbLuXr5YrgWuX0z4ykPMdsuOenQBQVcoNCQ==",
+  "subject": "github:@alice",
+  "type": "vouch"
+}

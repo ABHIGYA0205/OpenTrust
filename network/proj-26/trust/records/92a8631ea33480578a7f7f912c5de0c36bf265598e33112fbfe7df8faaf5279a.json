@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-26/pull/357"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-26",
+  "issuer_key": "Bcrn8BrH70N1ggcyisqq/nbl3GPsI/hCb93TA7L47xo=",
+  "prev": "sha256:284a55e6f52f65ac545056750acd661219a9d5f031bca8953e17cdc0514c4b4c",
+  "reason": "Reviewed 6 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality"
+  ],
+  "sig": "9BIlB0opvTMLundI2Ua5WcofVdMd2Q1t/FjYIjHznCr5JKsmuvWM57gqwQknnVHMRjYiulQRehCvVvXv4DOoCw==",
+  "subject": "github:@alice",
+  "type": "vouch"
+}

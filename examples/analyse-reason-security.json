@@ -1,0 +1,10 @@
+{
+  "scope": [
+    "code_quality",
+    "security_review"
+  ],
+  "evidence_strength": 0.5,
+  "rationale": "Concrete claim without a referenced artefact.",
+  "source": "fallback",
+  "model": null
+}

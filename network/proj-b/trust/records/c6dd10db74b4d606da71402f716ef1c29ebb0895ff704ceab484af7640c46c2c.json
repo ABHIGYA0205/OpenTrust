@@ -1,0 +1,14 @@
+{
+  "evidence": [
+    "https://github.com/proj-b/pull/500"
+  ],
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-b",
+  "issuer_key": "wihTawB+KxMEbPqScnDT/vKB976vyHtPKKd+KWUz4Dg=",
+  "prev": "sha256:0b1e702661b602a6fde78d689bd75a17c3d5f84d3a372e5b2942fdf4380810f1",
+  "reason": "Identical docs-only PR sent to dozens of projects in one hour.",
+  "severity": "high",
+  "sig": "/ROEjvj7i1gRbHPhfaimuxAp/yyaWDD15TS67ehcK6KAsZohg9jGobzAj3GlMCF7m7P3IVua+GUhNKrNIRmuCw==",
+  "subject": "github:@slop-account",
+  "type": "denounce"
+}

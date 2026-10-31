@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-34/pull/368"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-34",
+  "issuer_key": "TGinRwF2iBQoosip8bfmONVhSe+tBEbsrGHpHt9x1ng=",
+  "prev": "sha256:17a38dcf12f6b8777fb466a036d8248fa949164e551222608158e71131756f50",
+  "reason": "Reviewed 6 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "mMuEZazgHxOySU0OtKUVp4586TEk/CYT8PxdpgwlixKSwcd1ZgofNGrQ5MkrDE2sMIal0LBtHN7xnTmjsDcNCQ==",
+  "subject": "github:@esme",
+  "type": "vouch"
+}

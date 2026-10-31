@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-28/pull/139"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-28",
+  "issuer_key": "mICQNi/ayxQkwd/JNKFfRi+HL9joRP6YpSDujg9Icpk=",
+  "prev": "sha256:2619af8afbfdcef2f8c2e46414e3d6a329204d3f47ce9573391c7b661eb4e393",
+  "reason": "Reviewed 4 merged PRs; work was sound and tested.",
+  "scope": [
+    "docs"
+  ],
+  "sig": "lCPzkJKZNLY5VIzLBhOuIsftv9KgVHfaKvfkPi7uvJLou401t+0L4Gca0RiX/wt6VXLWWqZMLVbxR7BeZ3ZUBQ==",
+  "subject": "github:@bruno",
+  "type": "vouch"
+}

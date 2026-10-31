@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-r/pull/101"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-r",
+  "issuer_key": "HZbuQAQShTWPokTaNF+8KfOjhTTvX6rg7t7OyHjz7Lk=",
+  "prev": "sha256:1693cb05ed4e391cd0f522c15c24ec8cf0e05727e338c253995f02472c9c06c7",
+  "reason": "Reviewed 4 merged PRs; work was sound and tested.",
+  "scope": [
+    "security_review"
+  ],
+  "sig": "ccyLARjFIv7h8YSPxeL2fwvVhPaKBZjqYUc/Gs9RNuySCqcZ72XOYx1YB9HoTJoInJwFnlMsHwDbVSU44qDnBQ==",
+  "subject": "github:@alice",
+  "type": "vouch"
+}

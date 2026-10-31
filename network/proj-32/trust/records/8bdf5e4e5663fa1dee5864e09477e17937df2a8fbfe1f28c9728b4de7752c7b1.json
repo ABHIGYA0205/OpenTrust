@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-32/pull/248"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-32",
+  "issuer_key": "SV+tTRy8N8fA1Uqkv/hFnvPA2GHeIKqllE5a/CMvNSA=",
+  "prev": "sha256:2326faa420c9d1a5f83a182b762d9058cf9713938e3ca5adbc99573c49794d95",
+  "reason": "Reviewed 1 merged PRs; work was sound and tested.",
+  "scope": [
+    "docs"
+  ],
+  "sig": "IM/f70mZaoGJRw4UkZmd0bxgmjrHODfSRzr2gijZ0HVowuW49H57ctYUBkpJXOlBLEUa0PvmpybSZbI2AMi5Bg==",
+  "subject": "github:@alice",
+  "type": "vouch"
+}

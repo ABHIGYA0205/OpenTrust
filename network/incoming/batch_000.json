@@ -1,0 +1,433 @@
+[
+  {
+    "pr_id": "pr_campaign_033",
+    "project": "proj-33",
+    "author": "github:@fresh-33",
+    "title": "make the install docs friendlier",
+    "body": "The installation instructions were hard to read, so I made them friendlier. No code behaviour changed and no tests were touched. I can reword further if you like. Thanks for the time spent reviewing this during the event.",
+    "diff": "-installation: run pip install project\n+installation: see the pip line below",
+    "created_at": "2026-11-01T00:02:00Z",
+    "account_age_days": 4,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_legit_004",
+    "project": "proj-35",
+    "author": "github:@newcomer-05",
+    "title": "fix: memory leak in worker pool",
+    "body": "Closes #128.\n\nAdds TOML loading behind the same interface as the YAML loader, with a shared conformance test run against both formats.\n\nScope of this change: only `src/pool.py`, see report 4.",
+    "diff": "-    while True:\n-        task = queue.get()\n+    while not self._stop.is_set():\n+        try:\n+            task = queue.get(timeout=0.1)\n+        except Empty:\n+            continue",
+    "created_at": "2026-11-01T05:22:00Z",
+    "account_age_days": 3,
+    "files": [
+      "src/pool.py",
+      "tests/test_pool.py"
+    ],
+    "additions": 23,
+    "deletions": 2,
+    "linked_issue": true,
+    "includes_tests": true
+  },
+  {
+    "pr_id": "pr_campaign_026",
+    "project": "proj-26",
+    "author": "github:@fresh-26",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:29:00Z",
+    "account_age_days": 4,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 2,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_002",
+    "project": "proj-c",
+    "author": "github:@fresh-02",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:11:00Z",
+    "account_age_days": 2,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_027",
+    "project": "proj-27",
+    "author": "github:@fresh-27",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-11-01T00:31:00Z",
+    "account_age_days": 4,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 2,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_024",
+    "project": "proj-y",
+    "author": "github:@fresh-24",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:24:00Z",
+    "account_age_days": 4,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_006",
+    "project": "proj-g",
+    "author": "github:@fresh-06",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:34:00Z",
+    "account_age_days": 3,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 2,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_004",
+    "project": "proj-e",
+    "author": "github:@fresh-04",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-11-01T00:43:00Z",
+    "account_age_days": 2,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 2,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_022",
+    "project": "proj-w",
+    "author": "github:@fresh-22",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-11-01T00:10:00Z",
+    "account_age_days": 2,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 2,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_008",
+    "project": "proj-i",
+    "author": "github:@fresh-08",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:11:00Z",
+    "account_age_days": 3,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 2,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_014",
+    "project": "proj-o",
+    "author": "github:@fresh-14",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:19:00Z",
+    "account_age_days": 1,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_019",
+    "project": "proj-t",
+    "author": "github:@fresh-19",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:49:00Z",
+    "account_age_days": 3,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_015",
+    "project": "proj-p",
+    "author": "github:@fresh-15",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-11-01T00:10:00Z",
+    "account_age_days": 1,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_legit_007",
+    "project": "proj-k",
+    "author": "github:@newcomer-08",
+    "title": "perf: cache resolved imports",
+    "body": "Refs #149.\n\nSplit the 900-line parser into three modules with no behaviour change. The existing test suite passes unchanged, which is the proof that the refactor is behaviour-preserving.\n\nScope of this change: only `src/client.py`, see report 7.",
+    "diff": "-    return self._resolve(name)\n+    if name in self._cache:\n+        return self._cache[name]\n+    self._cache[name] = self._resolve(name)\n+    return self._cache[name]",
+    "created_at": "2026-11-01T04:03:00Z",
+    "account_age_days": 14,
+    "files": [
+      "src/client.py",
+      "tests/test_client.py"
+    ],
+    "additions": 39,
+    "deletions": 6,
+    "linked_issue": true,
+    "includes_tests": true
+  },
+  {
+    "pr_id": "pr_legit_008",
+    "project": "proj-t",
+    "author": "github:@newcomer-09",
+    "title": "fix: race in shutdown handler",
+    "body": "Fixes #156.\n\nThe worker pool was not joining on shutdown, so threads leaked on SIGTERM. Now it sets the stop event and joins with a timeout. Added a test that spawns and tears down the pool 50 times.\n\nScope of this change: only `src/paginator.py`, see report 8.",
+    "diff": "-    self._thread.start()\n+    self._thread = threading.Thread(target=self._run, daemon=True)\n+    self._thread.start()",
+    "created_at": "2026-11-01T00:21:00Z",
+    "account_age_days": 200,
+    "files": [
+      "src/paginator.py",
+      "tests/test_paginator.py"
+    ],
+    "additions": 59,
+    "deletions": 6,
+    "linked_issue": true,
+    "includes_tests": true
+  },
+  {
+    "pr_id": "pr_campaign_010",
+    "project": "proj-k",
+    "author": "github:@fresh-10",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-11-01T00:48:00Z",
+    "account_age_days": 1,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_013",
+    "project": "proj-n",
+    "author": "github:@fresh-13",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:31:00Z",
+    "account_age_days": 1,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_003",
+    "project": "proj-d",
+    "author": "github:@fresh-03",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:40:00Z",
+    "account_age_days": 2,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 2,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_legit_001",
+    "project": "proj-s",
+    "author": "github:@newcomer-02",
+    "title": "feat: add retry with backoff to client",
+    "body": "Closes #107.\n\nMy benchmark took 4.2s on the 10k-row fixture; after the change it is 1.1s. I kept the change local to the resolver cache and added a test for the cache-miss path so the fast path is not the only one covered.\n\nScope of this change: only `src/client.py`, see report 1.",
+    "diff": "-    result = self._fetch(url)\n+    for attempt in range(self.retries):\n+        try:\n+            return self._fetch(url)\n+        except TransientError:\n+            sleep(2 ** attempt)\n+    raise TransientError(url)",
+    "created_at": "2026-10-31T22:32:00Z",
+    "account_age_days": 3,
+    "files": [
+      "src/client.py",
+      "tests/test_client.py"
+    ],
+    "additions": 35,
+    "deletions": 8,
+    "linked_issue": true,
+    "includes_tests": true
+  },
+  {
+    "pr_id": "pr_campaign_030",
+    "project": "proj-30",
+    "author": "github:@fresh-30",
+    "title": "docs: clearer install instructions",
+    "body": "The install part of the readme was a little confusing, so I tidied the sentences up. Nothing about how the code works has changed, and I did not touch any tests. Tell me if you want it worded differently. Thanks for looking after this repo.",
+    "diff": "-installation: run pip install project\n+installation: install with pip",
+    "created_at": "2026-11-01T00:38:00Z",
+    "account_age_days": 2,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 2,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_031",
+    "project": "proj-31",
+    "author": "github:@fresh-31",
+    "title": "Reword the setup section of the docs",
+    "body": "I reworked the setup section so newcomers can follow it more easily. There are no behaviour changes here and no test updates. Happy to adjust the phrasing if you prefer. Appreciate the review during hacktoberfest.",
+    "diff": "-installation: run pip install project\n+installation: pip install is enough",
+    "created_at": "2026-10-31T23:28:00Z",
+    "account_age_days": 3,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_legit_009",
+    "project": "proj-z",
+    "author": "github:@newcomer-10",
+    "title": "docs(api): document the new parameter",
+    "body": "Closes #163.\n\nAdds TOML loading behind the same interface as the YAML loader, with a shared conformance test run against both formats.\n\nScope of this change: only `src/parser/core.py`, see report 9.",
+    "diff": "+    profile: bool = False,\n+    \"\"\"Emit per-stage timings to stderr.\"\"\"",
+    "created_at": "2026-11-01T00:04:00Z",
+    "account_age_days": 9,
+    "files": [
+      "src/parser/core.py",
+      "src/parser/nodes.py",
+      "tests/test_parser.py"
+    ],
+    "additions": 48,
+    "deletions": 10,
+    "linked_issue": true,
+    "includes_tests": true
+  },
+  {
+    "pr_id": "pr_campaign_018",
+    "project": "proj-s",
+    "author": "github:@fresh-18",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:12:00Z",
+    "account_age_days": 1,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_035",
+    "project": "proj-35",
+    "author": "github:@fresh-35",
+    "title": "Improve README installation wording",
+    "body": "The README's installation wording could be clearer, so I improved it. There are no behaviour differences and I did not change any tests. Let me know if you want different phrasing. Thank you for reviewing during hacktoberfest.",
+    "diff": "-installation: run pip install project\n+installation: pip is all you need",
+    "created_at": "2026-10-31T23:03:00Z",
+    "account_age_days": 2,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_023",
+    "project": "proj-x",
+    "author": "github:@fresh-23",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-11-01T00:30:00Z",
+    "account_age_days": 3,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  }
+]

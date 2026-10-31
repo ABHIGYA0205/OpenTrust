@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-d/pull/109"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-d",
+  "issuer_key": "2UaVd+eIoQVRRtNNTfGjdobMO952CGdctnzsMdUq/r0=",
+  "prev": "sha256:41cedce49ed528207d79926a4bc66d001092fa4f197af7b6d6015a685514ca2c",
+  "reason": "Reviewed 6 merged PRs; work was sound and tested.",
+  "scope": [
+    "docs"
+  ],
+  "sig": "v1L1NN7hfytZgwW771R9VNGOeEo1yRMEmC08/fAiCHKrFLy1nEHtCHgN8roaQbV2QpYw7g5kKo1egoGEkLhRCw==",
+  "subject": "github:@alice",
+  "type": "vouch"
+}

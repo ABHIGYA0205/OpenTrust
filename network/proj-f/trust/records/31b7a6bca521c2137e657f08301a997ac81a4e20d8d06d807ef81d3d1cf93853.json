@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-f/pull/192"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-f",
+  "issuer_key": "YcrBEDF6T8H7AgOlQbkJTu52TGZpLoosCEcnOp5jTWM=",
+  "prev": "sha256:22669e8e674205ca1a34288c281d29f23c4109b46bc5f4f2a38ee07fabfd4e2a",
+  "reason": "Reviewed 1 merged PRs; work was sound and tested.",
+  "scope": [
+    "security_review"
+  ],
+  "sig": "7QVXRHX2rERdsldteBU9TAa3yKLL2PGGgdZ8m2qZ2ln6G7yZRLi5bFUkeWBX/pQBfL8iFGprEkAmg+r0We3TDA==",
+  "subject": "github:@alice",
+  "type": "vouch"
+}

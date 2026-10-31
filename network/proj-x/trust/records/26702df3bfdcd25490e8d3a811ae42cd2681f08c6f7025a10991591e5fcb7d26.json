@@ -1,0 +1,14 @@
+{
+  "evidence": [
+    "https://github.com/proj-x/pull/9"
+  ],
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-x",
+  "issuer_key": "cQfceTbU7J/BVYYjBOCtHk2x5J/v9YVpedV8nkBspHY=",
+  "prev": "sha256:1e1742397a7c38b8fa72ed879650707f4289c5896da26cc3f218e3c5200530b6",
+  "reason": "Low quality contribution.",
+  "severity": "high",
+  "sig": "u4BxmOUE/nDd6U8+2mzkZEY2XppG+lou3hsrfbVYgY0G6ZaTRQ443JxNHyT/qM5KNO+Fi6ZYNs6A8T8OCisVDA==",
+  "subject": "github:@new-dev",
+  "type": "denounce"
+}

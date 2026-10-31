@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-29/pull/175"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-29",
+  "issuer_key": "pLK/O0SoNJZnOtlc3V0FTVoxgoQzLtn0CuP2ScDDZJY=",
+  "prev": "sha256:1f4fb1e837b5befebebbe672dd4cf78b9df4fef837a1ca7fde09b598ae3e73ce",
+  "reason": "Reviewed 5 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality"
+  ],
+  "sig": "Oo2U4ZDOEyBT/jk2/G1dNiR3DQCJVUGNE2i25ammZW/Aze0srxzihFMzEKBUGYQiZvfrWoxGetDR8kcRqS7uBA==",
+  "subject": "github:@alice",
+  "type": "vouch"
+}

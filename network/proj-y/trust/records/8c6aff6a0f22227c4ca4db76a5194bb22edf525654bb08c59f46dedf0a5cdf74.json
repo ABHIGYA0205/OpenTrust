@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-y/pull/292"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-y",
+  "issuer_key": "TMMrJ+otndQZBVsCJLNiuIO0uDD/YFbhgmt8jB5xeCQ=",
+  "prev": "sha256:0a333a447d08797c526afe97d57fa021d62ba523e2cbd31d9600a6435ab4f840",
+  "reason": "Reviewed 1 merged PRs; work was sound and tested.",
+  "scope": [
+    "security_review"
+  ],
+  "sig": "pP/QWiLhQyQFtDtpeVj6nUT8i+7hVAw5XQD9nQVcx2IFvLrls7avytj2Fkr7hGzP9cmnOYWa023+dYl76WadBg==",
+  "subject": "github:@alice",
+  "type": "vouch"
+}

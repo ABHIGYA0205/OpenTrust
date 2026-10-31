@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-35/pull/286"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-35",
+  "issuer_key": "368npr0UM1fBdC8EzHUW7YKTiFC3BLQKj/sKOhR+PaE=",
+  "prev": "sha256:42ecd6592d201c4528c8dda53c73273676ae1fa993474aedb7e932da1866581e",
+  "reason": "Reviewed 6 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality"
+  ],
+  "sig": "U+552/prDxdeGV8V4pKS5zkuHJ6YPLDkdTtmc1WsNP9qm8QtKswMwo5lPZu7FVATQDdR98oTVOUrzK6jvUAZDQ==",
+  "subject": "github:@esme",
+  "type": "vouch"
+}

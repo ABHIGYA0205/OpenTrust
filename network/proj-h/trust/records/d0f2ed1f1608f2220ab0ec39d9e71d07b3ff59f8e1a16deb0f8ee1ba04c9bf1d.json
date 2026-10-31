@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-h/pull/193"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-h",
+  "issuer_key": "gWwUAagyKGGYLP1Zd52z3Oc6cwHVPUzSUykcc0yJn7I=",
+  "prev": "sha256:327d16ef1ac05749b7cab99992c2373853ea0e1706c7edff0f0b6210a85d0c0a",
+  "reason": "Reviewed 6 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality"
+  ],
+  "sig": "E2e3yvAOh8tYor849KYwE+8YUiD2zbo037ky86BXG7aXeOjgF+dDEDanJTYoozpdjIcou7JLDBtHPpiahfHWBA==",
+  "subject": "github:@alice",
+  "type": "vouch"
+}
