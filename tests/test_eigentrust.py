@@ -72,3 +72,19 @@ def test_strong_path_beats_single_weak_edge():
     weights = personal_trust(graph, seed="a")
     assert weights["target"] > 0
     assert weights["a_trusted_weak"] == pytest.approx(0.0, abs=1e-9)
+
+
+def test_one_hop_by_default_more_on_request():
+    """P07: "If A trusts B and B trusts C, how should A evaluate C?"
+
+    By default A only sees B (policy.max_trust_hops = 1). A project that allows two
+    hops sees C, worth less than B.
+    """
+    from opentrust.policy import Policy
+
+    graph = TrustGraph({"a": {"b": 1.0}, "b": {"c": 1.0}})
+    default = personal_trust(graph, seed="a", max_hops=Policy().max_trust_hops)
+    assert default.get("c", 0.0) == 0.0
+    assert default["b"] > 0
+    two_hops = personal_trust(graph, seed="a", max_hops=2)
+    assert 0 < two_hops["c"] < two_hops["b"]
