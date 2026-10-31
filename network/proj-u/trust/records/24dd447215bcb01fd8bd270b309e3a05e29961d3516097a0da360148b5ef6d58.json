@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-u/pull/102"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-u",
+  "issuer_key": "d8FKqKj/r7RbNTft9855Bs3gJ2BHezsCfn58GiJVVEM=",
+  "prev": "sha256:53990fb13d7ac168c66a67e4f59c178ca24adb328df58a259f9ac6bd7495c445",
+  "reason": "Reviewed 5 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "dqD9A7CY+StFSpJMNL3XLw3Ya/hirgc0h7nOx6cgMMIsiTdncWWi4eYQ3Jk/yBiff6MEHnUDgzWWSQbTG+FFCw==",
+  "subject": "github:@chen",
+  "type": "vouch"
+}

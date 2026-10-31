@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-i/pull/213"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-i",
+  "issuer_key": "8S7JdXZ4F7+lyaaVIl/lpR586kwHpyTwR2/NzMQF0dk=",
+  "prev": "sha256:1a24f387edace08a3f1d48fa572b30bee57ed367048981d144eb7dd8287dbda7",
+  "reason": "Reviewed 1 merged PRs; work was sound and tested.",
+  "scope": [
+    "security_review"
+  ],
+  "sig": "0G3GsgkkWylFUQrvmtamtao/WR8EQr3kpIcFbRH0WSsK3T1uClCRZkOmJT0e6WboeAdtVTZ9VCwktO8Pbx8SBg==",
+  "subject": "github:@alice",
+  "type": "vouch"
+}

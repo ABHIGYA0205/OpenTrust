@@ -1,0 +1,8 @@
+
+# <type>: <short summary, imperative, under 60 chars>
+
+# What changed and why (1-3 lines).
+
+# --- REQUIRED BY THE HACKATHON GUIDELINES: name your AI tools on every commit ---
+Coding agent: <GitHub Copilot | Cursor | Claude Code | ChatGPT | none>
+Models used in project: <qwen2.5:7b-instruct (Ollama) | nomic-embed-text (Ollama) | none in this change>

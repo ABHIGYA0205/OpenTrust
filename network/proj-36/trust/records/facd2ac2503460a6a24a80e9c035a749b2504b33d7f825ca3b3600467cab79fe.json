@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-36/pull/351"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-36",
+  "issuer_key": "kWDMCpbo83tGZZiCs2VYR0DD/zuVJvGSlBP6KhaZnt0=",
+  "prev": "sha256:0b1bd3c3d3bdba698bac1506a746018075efe8923064c91266b85c7554a78f3a",
+  "reason": "Reviewed 1 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "pj+ZwAD25YisAIqDf53VJ0TTuXmFaQG4JAT1Wn+rSDybvhSHxWfrP63UyLlmJ7mXAFNtMvpHEwRbPOduAyaXAQ==",
+  "subject": "github:@divya",
+  "type": "vouch"
+}

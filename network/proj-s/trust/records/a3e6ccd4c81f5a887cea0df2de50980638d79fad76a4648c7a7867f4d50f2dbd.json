@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-s/pull/265"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-s",
+  "issuer_key": "2tdda8xFs5Lp2oWX/fasfKhqxRb8HE74yurZwRkqLLA=",
+  "prev": "sha256:0a064dda3095038f1303b2b87c71ad5228b8e7936898104fae412e4263ff03a3",
+  "reason": "Reviewed 5 merged PRs; work was sound and tested.",
+  "scope": [
+    "security_review"
+  ],
+  "sig": "MFfe36FUv8aY25qPgVLeb0uKbpkNHZuYOno65MLXRuEaFcS8/KU94vIAq4PfUrTVFQNwoArlSqD3s5+kqMpBDw==",
+  "subject": "github:@chen",
+  "type": "vouch"
+}

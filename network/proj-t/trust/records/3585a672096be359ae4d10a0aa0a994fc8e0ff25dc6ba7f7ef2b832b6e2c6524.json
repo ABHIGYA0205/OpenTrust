@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-t/pull/343"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-t",
+  "issuer_key": "sINDG+3NaAlh56KMTKTww9dtRz+0qfQXnlr2EwtP5Mc=",
+  "prev": "sha256:195ecb8a9f635f7d819f33f434127eac5488757d1f71bcdcd6f946b6b05d521f",
+  "reason": "Reviewed 1 merged PRs; work was sound and tested.",
+  "scope": [
+    "docs"
+  ],
+  "sig": "WUB47X+pkPDyWd3uyl/zj8+ZaP5oeKjZmK0H4WCdq2Jl8SgUy0kpv6F10gjNq0jWYE495J7rvZrDMo/izCRWDQ==",
+  "subject": "github:@chen",
+  "type": "vouch"
+}

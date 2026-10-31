@@ -1,0 +1,28 @@
+CAMPAIGN ALERT
+  score          : 0.84
+  cohort         : 30 accounts, 30 PRs, 30 projects
+  window         : 2026-10-31T23:01:00Z -> 2026-11-01T00:48:00Z (107 min)
+  similarity     : 1.00 (minhash)
+  account age    : median 3 days
+  triviality     : 1.00
+
+  signals:
+    similarity_density   1.00 ####################
+    cohort_size          1.00 ####################
+    project_overlap      0.00 
+    burstiness           1.00 ####################
+    account_newness      0.91 ##################
+    triviality_rate      1.00 ####################
+
+  example near-identical pairs:
+    pr_campaign_026 ~ pr_campaign_002  jaccard 1.00  (proj-26, proj-c)
+    pr_campaign_026 ~ pr_campaign_027  jaccard 1.00  (proj-26, proj-27)
+    pr_campaign_026 ~ pr_campaign_024  jaccard 1.00  (proj-26, proj-y)
+    pr_campaign_026 ~ pr_campaign_006  jaccard 1.00  (proj-26, proj-g)
+    pr_campaign_026 ~ pr_campaign_004  jaccard 1.00  (proj-26, proj-e)
+
+  projects affected: proj-26, proj-27, proj-28, proj-29, proj-a, proj-b, proj-c, proj-d, proj-e, proj-f, proj-g, proj-h
+
+  30 accounts (median age 3 days) issued 30 near-identical pull requests to 30 projects within 107 minutes. Mean payload similarity 1.00; triviality rate 1.00. 5 of 6 independent signals fired.
+
+50 PRs analysed, 30 flagged across 1 campaign(s)

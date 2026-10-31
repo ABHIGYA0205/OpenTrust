@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-z/pull/372"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-z",
+  "issuer_key": "r1XkA19IUeM2NmOd9md9nNu7lwQaBojqMeMt9mIQcv0=",
+  "prev": "sha256:623427309ab8121252667ec080e2842ea3667c91e02ccbaf90a5d84ec13d1e47",
+  "reason": "Reviewed 6 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality"
+  ],
+  "sig": "gd4R2xFo9yy2V+moCA5ym0je+6SK2c2/j+yyvFcmpT4C3MgVTgj5+FJEk+Y/See0lis1onK55gzufxJk2dupAA==",
+  "subject": "github:@divya",
+  "type": "vouch"
+}

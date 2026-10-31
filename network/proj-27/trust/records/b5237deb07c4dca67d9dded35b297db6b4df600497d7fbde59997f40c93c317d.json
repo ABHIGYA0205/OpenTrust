@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-27/pull/205"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-27",
+  "issuer_key": "UeiqLxnP8/VwB+HJWDkxj/riff+5I8INT8djQVpapXc=",
+  "prev": "sha256:0f67e4f05ffcf0bf3740d5a58428d5ba606cae0ec554b5154e4f722076397450",
+  "reason": "Reviewed 6 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "oXhKYZkfPeYGmkeTXtEwZgd2UbWb2m1wWhzeLILvt073YGCYvWz12pCUW/8Fm98jgLBnxUMRi69RrpAqcr8lAQ==",
+  "subject": "github:@divya",
+  "type": "vouch"
+}

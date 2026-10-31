@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-31/pull/364"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-31",
+  "issuer_key": "JpSdnA59X0G2/aEf+VQw7KDNq+pZ0ZZ90bOa26M6KqI=",
+  "prev": "sha256:08ce77729e8078baa3a123495ba3d753f5852f25d6e662bf6e0a45aee53c42e7",
+  "reason": "Reviewed 6 merged PRs; work was sound and tested.",
+  "scope": [
+    "security_review"
+  ],
+  "sig": "DM9N1HIZ8/gDnWKlc6fqGpWnzTM+QPtNDsqQEQdp9ExbtO4f2eNiVWL59/1F6zE09bOHY6a5oz6pGUzQvSG8DA==",
+  "subject": "github:@bruno",
+  "type": "vouch"
+}

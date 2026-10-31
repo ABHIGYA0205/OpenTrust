@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-j/pull/166"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-j",
+  "issuer_key": "VWIKwbZVfqOq1hP5pkMOOM4JDPxVnT+IH9bJh6GLmmw=",
+  "prev": "sha256:0ad49ee0ed242f9b3f0bb3ed3d3534158212192322975fd22201cb5aa6c0f438",
+  "reason": "Reviewed 5 merged PRs; work was sound and tested.",
+  "scope": [
+    "security_review"
+  ],
+  "sig": "jrFOKpQuLGfMC2tKqNC/sOo4kAF0Y7dwYVeoagm3FqsGyTOEapr/GWmli5M0HMPNoGo9aQpIX6y82nk+1h5mBQ==",
+  "subject": "github:@alice",
+  "type": "vouch"
+}

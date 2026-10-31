@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-33/pull/298"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-33",
+  "issuer_key": "WHmVwXfpd1PggWr4s0WywgWJ8hNHz6KtbCTuloZZGzc=",
+  "prev": "sha256:0be95e9951078c7d313680164c6faa507eaa78ebb401db698054723de8d04b36",
+  "reason": "Reviewed 3 merged PRs; work was sound and tested.",
+  "scope": [
+    "docs"
+  ],
+  "sig": "UQk7WAfJ8DHSvLwiIC/ub+nP7incgqfhctdNp/wnb9naBNV/GR+rGL+taCT4K9KGp7UCD65+7TMN9b4GOJI/CA==",
+  "subject": "github:@divya",
+  "type": "vouch"
+}

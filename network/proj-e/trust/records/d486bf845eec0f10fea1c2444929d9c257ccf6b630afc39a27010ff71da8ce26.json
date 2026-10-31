@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-e/pull/132"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-e",
+  "issuer_key": "5rayVlS57RimnJLAx1wVRHekehAebGbFyhNy6UerqBw=",
+  "prev": "sha256:441db31f3b8dd3723d7aa13bc308d33819dd215e0690ab3fb240f64f263cfd0b",
+  "reason": "Reviewed 5 merged PRs; work was sound and tested.",
+  "scope": [
+    "security_review"
+  ],
+  "sig": "w+ebP/FUov/L84TYHRBqWLSJG09FEvq162g4/RJarO9CEI5eKi2REbHAV14l2LXEXovPW6dhP5PN500Peme1AQ==",
+  "subject": "github:@divya",
+  "type": "vouch"
+}

@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-34/pull/167"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-34",
+  "issuer_key": "TGinRwF2iBQoosip8bfmONVhSe+tBEbsrGHpHt9x1ng=",
+  "prev": "sha256:17a38dcf12f6b8777fb466a036d8248fa949164e551222608158e71131756f50",
+  "reason": "Reviewed 3 merged PRs; work was sound and tested.",
+  "scope": [
+    "security_review"
+  ],
+  "sig": "b8RY1ZMktOngQhXlBsK7TlF+quLHErnVy9U+HBnN8/kjcCnEoY6i5PJ4jrJ0EZj8BScOeKe8IBMp3I75jw5/AQ==",
+  "subject": "github:@alice",
+  "type": "vouch"
+}

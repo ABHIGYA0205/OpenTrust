@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-a/pull/339"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-a",
+  "issuer_key": "eLx4PJP8+VcnlAwK6hQa9uMPctvJJhv4a5R5adAXNkw=",
+  "prev": "sha256:48558446a68e7b4cf6d2f140d0b5f65c51e17bcc718772dca6dea812a0f8835d",
+  "reason": "Reviewed 2 merged PRs; work was sound and tested.",
+  "scope": [
+    "security_review"
+  ],
+  "sig": "Hi8B+OCGvxRqG8OET2FQv0/vfQZk6H+49TmJpt6KY5PoRCcomLtXQjDFnrF5Bqg723jZiiFVSjXQvo7FXChTBg==",
+  "subject": "github:@chen",
+  "type": "vouch"
+}

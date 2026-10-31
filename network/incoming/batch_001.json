@@ -1,0 +1,433 @@
+[
+  {
+    "pr_id": "pr_campaign_028",
+    "project": "proj-28",
+    "author": "github:@fresh-28",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:25:00Z",
+    "account_age_days": 1,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_020",
+    "project": "proj-u",
+    "author": "github:@fresh-20",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:01:00Z",
+    "account_age_days": 3,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 2,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_legit_003",
+    "project": "proj-27",
+    "author": "github:@newcomer-04",
+    "title": "refactor: split parser into modules",
+    "body": "Fixes #121.\n\nThe worker pool was not joining on shutdown, so threads leaked on SIGTERM. Now it sets the stop event and joins with a timeout. Added a test that spawns and tears down the pool 50 times.\n\nScope of this change: only `src/parser/core.py`, see report 3.",
+    "diff": "-class Parser:\n+class Tokenizer:\n+class NodeBuilder:\n+class Parser:",
+    "created_at": "2026-10-31T20:29:00Z",
+    "account_age_days": 700,
+    "files": [
+      "src/parser/core.py",
+      "src/parser/nodes.py",
+      "tests/test_parser.py"
+    ],
+    "additions": 58,
+    "deletions": 8,
+    "linked_issue": true,
+    "includes_tests": true
+  },
+  {
+    "pr_id": "pr_campaign_025",
+    "project": "proj-z",
+    "author": "github:@fresh-25",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:32:00Z",
+    "account_age_days": 2,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 2,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_001",
+    "project": "proj-b",
+    "author": "github:@fresh-01",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:54:00Z",
+    "account_age_days": 2,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_034",
+    "project": "proj-34",
+    "author": "github:@fresh-34",
+    "title": "docs: polish getting started text",
+    "body": "Polishing the text in the getting started guide so it reads better for new people. Documentation-only change, nothing functional, no tests modified. Happy to revise the wording. Thanks for maintaining and for the review.",
+    "diff": "-installation: run pip install project\n+installation: use the pip command shown",
+    "created_at": "2026-11-01T00:58:00Z",
+    "account_age_days": 4,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_032",
+    "project": "proj-32",
+    "author": "github:@fresh-32",
+    "title": "Documentation: tidy installation page",
+    "body": "Cleaning up the wording on the installation page. This is documentation only, with no functional changes and no new tests. Let me know if a changelog entry is needed. Thanks for maintaining the project and reviewing my change.",
+    "diff": "-installation: run pip install project\n+installation: run the pip command",
+    "created_at": "2026-11-01T00:19:00Z",
+    "account_age_days": 4,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_005",
+    "project": "proj-f",
+    "author": "github:@fresh-05",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:49:00Z",
+    "account_age_days": 4,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 2,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_legit_005",
+    "project": "proj-26",
+    "author": "github:@newcomer-06",
+    "title": "test: cover timeout path",
+    "body": "Fixes #135.\n\nI reproduced this on 2.4.1 by feeding an empty string to the loader. The guard was checking the wrong variable. Added a regression test that fails on the old code and passes now.\n\nScope of this change: only `src/errors.py`, see report 5.",
+    "diff": "+def test_timeout_path(monkeypatch):\n+    monkeypatch.setattr(client, 'TIMEOUT', 0.01)\n+    with pytest.raises(TimeoutError):\n+        client.call('slow')",
+    "created_at": "2026-11-01T03:41:00Z",
+    "account_age_days": 45,
+    "files": [
+      "src/errors.py"
+    ],
+    "additions": 26,
+    "deletions": 12,
+    "linked_issue": true,
+    "includes_tests": true
+  },
+  {
+    "pr_id": "pr_legit_000",
+    "project": "proj-r",
+    "author": "github:@newcomer-01",
+    "title": "fix: handle empty config values",
+    "body": "Fixes #100.\n\nI reproduced this on 2.4.1 by feeding an empty string to the loader. The guard was checking the wrong variable. Added a regression test that fails on the old code and passes now.\n\nScope of this change: only `src/loader.py`, see report 0.",
+    "diff": "-    if cfg is None:\n-        return cfg['value']\n+    if not cfg:\n+        raise ValueError('config value is required')\n+    return cfg['value']",
+    "created_at": "2026-10-31T20:49:00Z",
+    "account_age_days": 9,
+    "files": [
+      "src/loader.py",
+      "tests/test_loader.py"
+    ],
+    "additions": 24,
+    "deletions": 2,
+    "linked_issue": true,
+    "includes_tests": true
+  },
+  {
+    "pr_id": "pr_legit_006",
+    "project": "proj-s",
+    "author": "github:@newcomer-07",
+    "title": "feat: support TOML config",
+    "body": "Closes #142.\n\nMy benchmark took 4.2s on the 10k-row fixture; after the change it is 1.1s. I kept the change local to the resolver cache and added a test for the cache-miss path so the fast path is not the only one covered.\n\nScope of this change: only `src/loader.py`, see report 6.",
+    "diff": "+def load_toml(path):\n+    with open(path, 'rb') as handle:\n+        return tomllib.load(handle)",
+    "created_at": "2026-11-01T04:17:00Z",
+    "account_age_days": 1,
+    "files": [
+      "src/loader.py",
+      "tests/test_loader.py"
+    ],
+    "additions": 53,
+    "deletions": 4,
+    "linked_issue": true,
+    "includes_tests": true
+  },
+  {
+    "pr_id": "pr_campaign_037",
+    "project": "proj-37",
+    "author": "github:@fresh-37",
+    "title": "Clarify the installation instructions",
+    "body": "Clarifying the installation instructions, which confused a few people. This touches documentation only, with no behaviour or test changes. Tell me if you want it phrased differently. Thanks for taking the time to review my work.",
+    "diff": "-installation: run pip install project\n+installation: run pip as described",
+    "created_at": "2026-10-31T23:57:00Z",
+    "account_age_days": 3,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_016",
+    "project": "proj-q",
+    "author": "github:@fresh-16",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:29:00Z",
+    "account_age_days": 1,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_036",
+    "project": "proj-36",
+    "author": "github:@fresh-36",
+    "title": "docs(install): clearer sentences",
+    "body": "Making the sentences in the install docs clearer for newcomers. No functional changes and no test changes are part of this pull request. Happy to adjust if you would prefer other words. Thanks for maintaining this repository.",
+    "diff": "-installation: run pip install project\n+installation: install via pip",
+    "created_at": "2026-11-01T00:30:00Z",
+    "account_age_days": 1,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 2,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_011",
+    "project": "proj-l",
+    "author": "github:@fresh-11",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:54:00Z",
+    "account_age_days": 4,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_012",
+    "project": "proj-m",
+    "author": "github:@fresh-12",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:09:00Z",
+    "account_age_days": 4,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 2,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_007",
+    "project": "proj-h",
+    "author": "github:@fresh-07",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:35:00Z",
+    "account_age_days": 3,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_legit_002",
+    "project": "proj-32",
+    "author": "github:@newcomer-03",
+    "title": "fix: off-by-one in paginator",
+    "body": "Refs #114.\n\nSplit the 900-line parser into three modules with no behaviour change. The existing test suite passes unchanged, which is the proof that the refactor is behaviour-preserving.\n\nScope of this change: only `src/paginator.py`, see report 2.",
+    "diff": "-    return items[start:start + self.page_size]\n+    end = min(start + self.page_size, len(items))\n+    return items[start:end]",
+    "created_at": "2026-11-01T01:23:00Z",
+    "account_age_days": 3,
+    "files": [
+      "src/paginator.py",
+      "tests/test_paginator.py"
+    ],
+    "additions": 41,
+    "deletions": 14,
+    "linked_issue": true,
+    "includes_tests": true
+  },
+  {
+    "pr_id": "pr_campaign_017",
+    "project": "proj-r",
+    "author": "github:@fresh-17",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-11-01T00:20:00Z",
+    "account_age_days": 3,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_021",
+    "project": "proj-v",
+    "author": "github:@fresh-21",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:40:00Z",
+    "account_age_days": 2,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 1,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_029",
+    "project": "proj-29",
+    "author": "github:@fresh-29",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:26:00Z",
+    "account_age_days": 4,
+    "files": [
+      "README.md"
+    ],
+    "additions": 1,
+    "deletions": 2,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_legit_011",
+    "project": "proj-e",
+    "author": "github:@newcomer-12",
+    "title": "feat: expose --profile flag",
+    "body": "Closes #177.\n\nMy benchmark took 4.2s on the 10k-row fixture; after the change it is 1.1s. I kept the change local to the resolver cache and added a test for the cache-miss path so the fast path is not the only one covered.\n\nScope of this change: only `src/errors.py`, see report 11.",
+    "diff": "-    result = self._fetch(url)\n+    for attempt in range(self.retries):\n+        try:\n+            return self._fetch(url)\n+        except TransientError:\n+            sleep(2 ** attempt)\n+    raise TransientError(url)",
+    "created_at": "2026-10-31T23:32:00Z",
+    "account_age_days": 45,
+    "files": [
+      "src/errors.py"
+    ],
+    "additions": 49,
+    "deletions": 10,
+    "linked_issue": true,
+    "includes_tests": true
+  },
+  {
+    "pr_id": "pr_campaign_000",
+    "project": "proj-a",
+    "author": "github:@fresh-00",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:28:00Z",
+    "account_age_days": 4,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 2,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_campaign_009",
+    "project": "proj-j",
+    "author": "github:@fresh-09",
+    "title": "docs: improve wording in the installation section",
+    "body": "This pull request improves the wording and readability of the installation section of the documentation. I noticed a few sentences that could be clearer for new contributors, so I rephrased them without changing any behaviour. No functional changes are included in this pull request and no tests were modified. Please let me know if you would like the wording adjusted, or if a changelog entry is required for documentation-only changes such as this one. Thank you for maintaining this project and for taking the time to review my contribution during the Hacktoberfest period.",
+    "diff": "-installation: run pip install project\n+installation: use pip to install the project",
+    "created_at": "2026-10-31T23:51:00Z",
+    "account_age_days": 4,
+    "files": [
+      "README.md"
+    ],
+    "additions": 2,
+    "deletions": 2,
+    "linked_issue": false,
+    "includes_tests": false
+  },
+  {
+    "pr_id": "pr_legit_010",
+    "project": "proj-z",
+    "author": "github:@newcomer-11",
+    "title": "fix: correct type annotation on loader",
+    "body": "Fixes #170.\n\nI reproduced this on 2.4.1 by feeding an empty string to the loader. The guard was checking the wrong variable. Added a regression test that fails on the old code and passes now.\n\nScope of this change: only `src/pool.py`, see report 10.",
+    "diff": "-    if cfg is None:\n-        return cfg['value']\n+    if not cfg:\n+        raise ValueError('config value is required')\n+    return cfg['value']",
+    "created_at": "2026-10-31T22:02:00Z",
+    "account_age_days": 3,
+    "files": [
+      "src/pool.py",
+      "tests/test_pool.py"
+    ],
+    "additions": 59,
+    "deletions": 4,
+    "linked_issue": true,
+    "includes_tests": true
+  }
+]

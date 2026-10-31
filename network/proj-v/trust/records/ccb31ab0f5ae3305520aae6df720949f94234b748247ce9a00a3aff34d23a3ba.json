@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-v/pull/219"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-v",
+  "issuer_key": "Zzp7Mt3l17kqiMuzI8cHfSAjM0wDwAYPiZNLdlYJqOs=",
+  "prev": "sha256:4c53d810c59777592c0bb5078f03b5ce74affe816b213c99aed5078bdef18d0a",
+  "reason": "Reviewed 3 merged PRs; work was sound and tested.",
+  "scope": [
+    "security_review"
+  ],
+  "sig": "4bycgGYjD4bXLqX4rct0H3ro9BpFh1nGzhsjAwSyi5p/VyZx8XuVBtG12EzsIX0qxDt7RY01oGD1uzDocshwCA==",
+  "subject": "github:@divya",
+  "type": "vouch"
+}

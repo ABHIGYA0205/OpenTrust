@@ -1,0 +1,9 @@
+{
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-f",
+  "issuer_key": "YcrBEDF6T8H7AgOlQbkJTu52TGZpLoosCEcnOp5jTWM=",
+  "sig": "zD4fJ3lvaljjsyap8IOLpO56mqRfWgVZ2dlzQdTTkVPS6ZPbSJ6WxD+Av5m3i5WGXhJZmvlPMI9QGreRm4tjDw==",
+  "target_project": "proj-a",
+  "type": "trust_edge",
+  "weight": 0.82
+}

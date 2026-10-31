@@ -1,0 +1,10 @@
+{
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-32",
+  "issuer_key": "SV+tTRy8N8fA1Uqkv/hFnvPA2GHeIKqllE5a/CMvNSA=",
+  "prev": "sha256:36c810a354476e0f95cc90fd2105c89a10d93510ec75fc596dced22634af15bf",
+  "sig": "sssv1vR1z3PHuZNm9NCoRS+shxLLHMaKVVWuAd6Fi+Vpcx6NOgh1MakT1T3Zq6D+R5i3feweQsnG1vcyuYJhAw==",
+  "target_project": "proj-c",
+  "type": "trust_edge",
+  "weight": 0.82
+}

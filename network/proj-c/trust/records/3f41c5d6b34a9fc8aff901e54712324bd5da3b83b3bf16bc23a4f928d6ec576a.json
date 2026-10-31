@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-c/pull/200"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-c",
+  "issuer_key": "1LTVfWBqiLqzQ6DY04lnF2piNOkQHP5ocE7rUYuIFxo=",
+  "prev": "sha256:0acca432432c7171b03e29a20f7281cbfeb7988318c59a95c9d8539bff5fbb88",
+  "reason": "Reviewed 4 merged PRs; work was sound and tested.",
+  "scope": [
+    "security_review"
+  ],
+  "sig": "5PwtheE9mr9Rw5U/FD/wL9Qsxazbpx2VLT6J50FqAdomJkAUfRWkOvwij394WyVnMqQaAVcfv/u2S1/UFJEeCw==",
+  "subject": "github:@esme",
+  "type": "vouch"
+}

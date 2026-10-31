@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-39/pull/319"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-39",
+  "issuer_key": "pvUwwNmsjU3/aNQug6prb6o9ejHEXilVP3dggDDI99E=",
+  "prev": "sha256:5116a3aa1dcba35f13ebfe42efb493d335a8ca08a2a3453bede8720b76f25dcc",
+  "reason": "Reviewed 3 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality"
+  ],
+  "sig": "3FtKeZj4a+SvxWPtHb6un7UqPhwA07a66LmNo5AISZyFK165hCwHF174KU6aYGIa3wPrNM7rPU/kBdafbpkZDw==",
+  "subject": "github:@esme",
+  "type": "vouch"
+}

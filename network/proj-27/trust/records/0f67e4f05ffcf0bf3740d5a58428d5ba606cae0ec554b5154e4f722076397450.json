@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-27/pull/235"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-27",
+  "issuer_key": "UeiqLxnP8/VwB+HJWDkxj/riff+5I8INT8djQVpapXc=",
+  "prev": "sha256:40a4582335523413882e2b2a900b7322640541194caa68b9f2b108e9ce6d09dd",
+  "reason": "Reviewed 1 merged PRs; work was sound and tested.",
+  "scope": [
+    "security_review"
+  ],
+  "sig": "0n9FKzLFVAZ27sknumbIjgKR7ZfI6q5dP34qCUTyX7RpXYjkRfbXhQFb550Yb97WSqcfwnQxYe/A1d7ucXGJDA==",
+  "subject": "github:@alice",
+  "type": "vouch"
+}

@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-32/pull/143"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-32",
+  "issuer_key": "SV+tTRy8N8fA1Uqkv/hFnvPA2GHeIKqllE5a/CMvNSA=",
+  "prev": "sha256:36c810a354476e0f95cc90fd2105c89a10d93510ec75fc596dced22634af15bf",
+  "reason": "Reviewed 3 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "vmL7kVtX8QKDQ5A/QP1RPBVpgFdo6p97H5brCPCG8ZnIt7ySXkmuoqeMqmrwGc1hAwJC6jmKJWXCRq6MP30LBQ==",
+  "subject": "github:@divya",
+  "type": "vouch"
+}

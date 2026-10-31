@@ -1,0 +1,9 @@
+{
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-35",
+  "issuer_key": "368npr0UM1fBdC8EzHUW7YKTiFC3BLQKj/sKOhR+PaE=",
+  "sig": "VlbT9pF/mCApebwns/kEeEC47P6KO2T6i5fImYu+OzMo6791zDrlSN7fE/KmIxQ+WrxxEJqsbtQ0BNH0X4pvBA==",
+  "target_project": "proj-a",
+  "type": "trust_edge",
+  "weight": 0.77
+}

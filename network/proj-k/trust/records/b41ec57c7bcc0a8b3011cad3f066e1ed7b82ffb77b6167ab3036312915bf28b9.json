@@ -1,0 +1,10 @@
+{
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-k",
+  "issuer_key": "Ghosch/ozvW8O2rdeHGxWN+dlXHhFgWzIa+Un8DY3jw=",
+  "prev": "sha256:21316c47d0a5e12d4ba072ca51907c1729c1f62b600b8d01693c79ccf355a2b8",
+  "sig": "gAH3W8HKmNBQtEoW/36e6vgNKwp1QC0YmZso35H1wmwAP8WVsaMp6UROi0Ln/z7BNAx4wyIfeE7FOv6kvEoHCw==",
+  "target_project": "proj-b",
+  "type": "trust_edge",
+  "weight": 0.81
+}

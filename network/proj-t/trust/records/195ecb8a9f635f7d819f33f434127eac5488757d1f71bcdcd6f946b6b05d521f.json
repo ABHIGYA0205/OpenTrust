@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-t/pull/271"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-t",
+  "issuer_key": "sINDG+3NaAlh56KMTKTww9dtRz+0qfQXnlr2EwtP5Mc=",
+  "prev": "sha256:4ea8a1a224e49edfaa0873fc194982e16ecbdfa8372523686041e13e57684c78",
+  "reason": "Reviewed 1 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "AL6SmQPpJ7LuqOaZXPdL7+Hak8i162LXhQZfY7dJUJDrFlFQESlejnSvm8peWKVB+2hPef7D4vGZX/a9dUc/Bw==",
+  "subject": "github:@bruno",
+  "type": "vouch"
+}

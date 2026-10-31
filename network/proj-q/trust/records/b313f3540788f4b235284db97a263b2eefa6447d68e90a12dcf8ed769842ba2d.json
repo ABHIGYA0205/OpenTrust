@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-q/pull/295"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-q",
+  "issuer_key": "Vdm6FLv7V/bjcXZKRDJBJ4d1Ep43W5AVIE5eA5oQLCw=",
+  "prev": "sha256:0edc9eb55375bcf48806b754e4ac61ddb7e91c3df839f921d8e82ac79da4349b",
+  "reason": "Reviewed 1 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality"
+  ],
+  "sig": "C2aDUDb8oLuBi5VL2JZ4rPUPwA6Zf+gDiaoCvAjM8eQ/Gt8vC2YvDBhhpEpr1+jKB9ObFL6qdiuEZ+pQRfrqDw==",
+  "subject": "github:@divya",
+  "type": "vouch"
+}

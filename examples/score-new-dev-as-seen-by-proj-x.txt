@@ -1,0 +1,17 @@
+Subject  : github:@new-dev
+Viewpoint: proj-x
+Verdict  : QUARANTINED   (score -1.420)
+Counted vouches:
+  + 0.080  vouch by proj-b (trust 0.080, scope code_quality) — Fixed a real null-dereference and added the regression test.
+Counted denouncements:
+  - 1.500  denounce by proj-x (trust 1.000, severity high, corroboration x1.00) — Low quality contribution.
+
+trust weights as seen by proj-x:
+  proj-x         0.541
+  proj-c         0.084
+  proj-d         0.083
+  proj-a         0.081
+  proj-b         0.080
+  proj-q         0.058
+  proj-t         0.055
+  proj-y         0.018

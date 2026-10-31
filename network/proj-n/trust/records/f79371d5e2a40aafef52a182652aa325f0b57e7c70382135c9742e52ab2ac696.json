@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-n/pull/321"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-n",
+  "issuer_key": "Qj1i6hTGSp79IqH3bEej34MF/zCH7HnhUv9pLbShwjs=",
+  "prev": "sha256:11ce753542ed0510856cceb043bbdd5649acaad54bef6551c72f22da3d3a0e8f",
+  "reason": "Reviewed 6 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality"
+  ],
+  "sig": "KK8ZcNJv8uJRUBCZ9Dfgvsadaw7cybXGFx/5J+RNfd3ad2crFj7i2H6tFRzXZDMgG11F5evo6kiH5jmi2V3xCQ==",
+  "subject": "github:@bruno",
+  "type": "vouch"
+}

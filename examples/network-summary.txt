@@ -1,0 +1,45 @@
+network: 40 projects
+
+  project         records  vouch  denounce  edges
+  proj-26               8      2         0      6
+  proj-27               8      2         0      6
+  proj-28               8      2         0      6
+  proj-29               8      2         0      6
+  proj-30               8      2         0      6
+  proj-31               8      2         0      6
+  proj-32               8      2         0      6
+  proj-33               8      2         0      6
+  proj-34               8      2         0      6
+  proj-35               8      2         0      6
+  proj-36               8      2         0      6
+  proj-37               8      2         0      6
+  proj-38               8      2         0      6
+  proj-39               8      2         0      6
+  proj-a                6      2         1      3
+  proj-b                9      3         1      5
+  proj-c                8      2         1      5
+  proj-d                7      2         0      5
+  proj-e                8      2         0      6
+  proj-f                8      2         0      6
+  proj-g                8      2         0      6
+  proj-h                8      2         0      6
+  proj-i                8      2         0      6
+  proj-j                8      2         0      6
+  proj-k                8      2         0      6
+  proj-l                8      2         0      6
+  proj-m                8      2         0      6
+  proj-n                8      2         0      6
+  proj-o                8      2         0      6
+  proj-p                8      2         0      6
+  proj-q                8      2         0      6
+  proj-r                8      2         0      6
+  proj-s                8      2         0      6
+  proj-t                8      2         0      6
+  proj-u                8      2         0      6
+  proj-v                8      2         0      6
+  proj-w                8      2         0      6
+  proj-x               10      2         1      7
+  proj-y                8      2         0      6
+  proj-z                8      2         0      6
+
+signatures verified: 320 records, 0 rejected

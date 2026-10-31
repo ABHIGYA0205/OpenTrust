@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-p/pull/107"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-p",
+  "issuer_key": "REvZ69kga3Ewu9FDDqqwY92l03Sw5sBh4m7Xlwymr88=",
+  "prev": "sha256:02ee654022cb2c6ce68dc8833833d42004c7a07cc36684d6f1d25048538f52ff",
+  "reason": "Reviewed 2 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality"
+  ],
+  "sig": "vZx/b54JAEfyZTdId8+NCrVzkctxs6QX45ETkLq8+g1sSo9n/LCpLMduBP7NZKxmxAX8Wy26Ipr01Ki8eDt4Dg==",
+  "subject": "github:@divya",
+  "type": "vouch"
+}

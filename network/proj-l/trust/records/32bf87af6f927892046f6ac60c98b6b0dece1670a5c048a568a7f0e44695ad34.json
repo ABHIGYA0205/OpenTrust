@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-l/pull/328"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-l",
+  "issuer_key": "N56GQX1bl0/HdBkGQDxhNbar3uuXfF1lBHykR1r0xXE=",
+  "prev": "sha256:225230027e60e8208f68f5fff146ac1c62bc13a099d6f4284599ea86e2e0ce54",
+  "reason": "Reviewed 3 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "2sfDOpDt1fC7KnlArIatvNEsmroIU5Ex/aM2ur999HlC4pkKNnADlx787we3RARwwNfLhstu73NBdMRhLIDoDQ==",
+  "subject": "github:@chen",
+  "type": "vouch"
+}

@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-l/pull/277"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-l",
+  "issuer_key": "N56GQX1bl0/HdBkGQDxhNbar3uuXfF1lBHykR1r0xXE=",
+  "prev": "sha256:225230027e60e8208f68f5fff146ac1c62bc13a099d6f4284599ea86e2e0ce54",
+  "reason": "Reviewed 3 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "oKWFnfTh1v98q1YAo23ty97rdCA4bBtnaH4Q9qcKBoSIgq1+93hxUze0avMKA6mZycSgjit3uo3K0mjZYzL9Cw==",
+  "subject": "github:@esme",
+  "type": "vouch"
+}

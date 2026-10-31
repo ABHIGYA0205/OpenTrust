@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-g/pull/363"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-g",
+  "issuer_key": "LZxgvWdY+pt7NnqVUKlrp5Sb5k/nraW0lHIy8K4rwy0=",
+  "prev": "sha256:25b18b9afb836336541522c9c65b79485ce2c5ede8214aaa62d084d7405781e2",
+  "reason": "Reviewed 5 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "/5jKSt5vqZDdBTpZYlFZGNZ0m8cpM4GUExQZAT140Q+VHlEqM3GyqgIsfXgOfBe409QPZkj1Youkq1rK2PNtCQ==",
+  "subject": "github:@chen",
+  "type": "vouch"
+}

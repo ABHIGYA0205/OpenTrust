@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-x/pull/399"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-x",
+  "issuer_key": "cQfceTbU7J/BVYYjBOCtHk2x5J/v9YVpedV8nkBspHY=",
+  "prev": "sha256:1e1742397a7c38b8fa72ed879650707f4289c5896da26cc3f218e3c5200530b6",
+  "reason": "Reviewed 6 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality"
+  ],
+  "sig": "d4/sv3TZ9WV0UMl4TZlqwwCn2zZ29LpCFCc6wzmO8ouIcrmz93MJewIT5fd6D8JhkVcW51HBJSPZwqQTo1nNAQ==",
+  "subject": "github:@divya",
+  "type": "vouch"
+}

@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-k/pull/203"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-k",
+  "issuer_key": "Ghosch/ozvW8O2rdeHGxWN+dlXHhFgWzIa+Un8DY3jw=",
+  "prev": "sha256:21316c47d0a5e12d4ba072ca51907c1729c1f62b600b8d01693c79ccf355a2b8",
+  "reason": "Reviewed 2 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality"
+  ],
+  "sig": "ItsxbSIFcpLECx2JWls6PEYdxGqVpOfDw11qhKASF0zr7Zo4UaPCt5rFX//q2xlftzOA6yCuVHDmmOaGPPGdDg==",
+  "subject": "github:@bruno",
+  "type": "vouch"
+}

@@ -1,0 +1,17 @@
+{
+  "evidence": [
+    "https://github.com/proj-30/pull/131"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-30",
+  "issuer_key": "AHPti5E6BDdrFTFmaM2ky5o7z2XcvMiMnYSaFxpbm8E=",
+  "prev": "sha256:272e07cc1d9a3ce8b8b7e006823596f82560bfd26293db53e8b587d0315728d8",
+  "reason": "Reviewed 4 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality"
+  ],
+  "sig": "XQ7OKg6C21KmXcXl5gkieREToVqgMby8A6KbdyUYzE7pwcY/UR/rkq8D26cbgcoJD2LkxcbURHolbdyyFcp6Dg==",
+  "subject": "github:@esme",
+  "type": "vouch"
+}

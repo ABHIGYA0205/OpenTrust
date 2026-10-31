@@ -1,0 +1,18 @@
+{
+  "evidence": [
+    "https://github.com/proj-w/pull/174"
+  ],
+  "expires_at": "2027-10-31T15:17:03Z",
+  "issued_at": "2026-10-31T15:17:03Z",
+  "issuer": "proj-w",
+  "issuer_key": "n4WQ2Cl9sl9YCdmrH3ymTjnkTTKBQ43R/Q0rYxRxtjc=",
+  "prev": "sha256:1e835508026b3323f9b70b507f76e08f03f9f4517add1202dd52b9b0501237fd",
+  "reason": "Reviewed 3 merged PRs; work was sound and tested.",
+  "scope": [
+    "code_quality",
+    "responsiveness"
+  ],
+  "sig": "8Dg7uqyfVes8CVwrckIlscL/1d3t2SmUaBopsHWxVMIA6DTFiuWTmdqnEwlTdSCq8BhA+67x7I4HWRN6UE2SAA==",
+  "subject": "github:@bruno",
+  "type": "vouch"
+}
