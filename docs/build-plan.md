@@ -25,7 +25,7 @@ git config commit.template .gitmessage      # prompts for agent + models on ever
 git add HACKATHON.md && git commit -m "docs: team, problem statement, and AI models
 
 Coding agent: <yours>
-Models used in project: qwen2.5:7b-instruct, nomic-embed-text"
+Models used in project: qwen3:4b-instruct-2507-q4_K_M, qwen3-embedding:0.6b"
 
 # now create the GitHub repo (empty, public, no README, no .gitignore)
 # then:
@@ -53,8 +53,8 @@ That single PR demonstrates the whole workflow the graders are looking for: PR t
 filled, models named, CI green, `examples/` with real output. **Submit the repo link on
 OrganizerHQ the moment `main` exists** — don't wait for the scaffold PR to merge.
 
-While you do that, one of you starts `ollama pull qwen2.5:7b-instruct` and
-`ollama pull nomic-embed-text` (several GB — start now, it finishes while you work).
+While you do that, one of you starts `ollama pull qwen3:4b-instruct-2507-q4_K_M` and
+`ollama pull qwen3-embedding:0.6b` (several GB — start now, it finishes while you work).
 
 ---
 
@@ -110,7 +110,7 @@ Priority order:
 1. **Verify the AI deliverable on your own laptop.** `opentrust/llm.py` is written and
    wired into `vouch`/`denounce`/`analyse`, with a deterministic fallback. Your job is to
    run it with Ollama up and confirm `source: "llm"` comes back:
-   `ollama pull qwen2.5:7b-instruct && opentrust analyse --reason "Reviewed 3 merged PRs, caught a null-deref"`
+   `ollama pull qwen3:4b-instruct-2507-q4_K_M && opentrust analyse --reason "Reviewed 3 merged PRs, caught a null-deref"`
    Then add `analyse_reason` output to `examples/` (`--no-llm` and live) — that pair of
    files *is* the proof the model does real work. **15 points, and the −5 trap is that
    naming a model your code does not use.**

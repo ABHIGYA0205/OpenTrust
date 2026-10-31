@@ -5,4 +5,4 @@
 
 # --- REQUIRED BY THE HACKATHON GUIDELINES: name your AI tools on every commit ---
 Coding agent: <GitHub Copilot | Cursor | Claude Code | ChatGPT | none>
-Models used in project: <qwen2.5:7b-instruct (Ollama) | nomic-embed-text (Ollama) | none in this change>
+Models used in project: <qwen3:4b-instruct-2507-q4_K_M (Ollama) | qwen3-embedding:0.6b (Ollama) | none in this change>

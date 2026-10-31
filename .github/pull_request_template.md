@@ -7,7 +7,7 @@
 <!-- Open-source / open-weight models used by the implementation in this PR. -->
 
 - none
-<!-- e.g. `qwen2.5:7b-instruct` via Ollama (reason/evidence parsing); `nomic-embed-text` via Ollama (Tier-2 PR similarity) -->
+<!-- e.g. `qwen3:4b-instruct-2507-q4_K_M` via Ollama (reason/evidence parsing); `qwen3-embedding:0.6b` via Ollama (Tier-2 PR similarity) -->
 
 ## AI coding assistants that helped write it
 

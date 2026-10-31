@@ -50,7 +50,7 @@ def test_tier1_cannot_see_paraphrases():
 
 @pytest.mark.skipif(
     embedding_similarity(["probe a", "probe b"]) is None,
-    reason="Tier 2 needs a local embedding model (ollama pull nomic-embed-text)",
+    reason="Tier 2 needs a local embedding model (ollama pull qwen3-embedding:0.6b)",
 )
 def test_tier2_catches_paraphrased_payloads():
     from opentrust.campaign import detect_campaigns

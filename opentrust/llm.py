@@ -31,7 +31,7 @@ __all__ = [
     "narrate_campaign",
 ]
 
-DEFAULT_MODEL = os.environ.get("TRUSTNET_MODEL", "qwen3:4b-instruct-2507-q4_K_M")
+DEFAULT_MODEL = os.environ.get("OPENTRUST_MODEL", "qwen3:4b-instruct-2507-q4_K_M")
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
 TIMEOUT_SECONDS = 60
 
