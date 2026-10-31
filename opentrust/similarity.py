@@ -72,12 +72,27 @@ def pairwise_similarity(texts: list[str], num_perm: int = NUM_PERM) -> list[list
     return matrix
 
 
-def embedding_similarity(texts: list[str], model: str = "qwen3-embedding:0.6b") -> list[list[float]] | None:
+# Qwen3-Embedding is trained to take a task instruction in front of the text.
+# Asking it to match on what a change does, not how it is worded, is what lets it
+# see through a reworded spam payload.
+PR_INSTRUCTION = (
+    "Given a pull request, find other pull requests that make the same change, "
+    "however they are worded"
+)
+
+
+def embedding_similarity(
+    texts: list[str],
+    model: str = "qwen3-embedding:0.6b",
+    instruction: str | None = None,
+) -> list[list[float]] | None:
     """Tier-2 similarity via a local Ollama embedding model.
 
     Returns ``None`` when no local model is reachable, so callers can fall back to
     Tier 1 instead of failing. Never calls a cloud API.
     """
+    if instruction:
+        texts = [f"Instruct: {instruction}\nQuery: {text}" for text in texts]
     try:
         import json
         import urllib.request

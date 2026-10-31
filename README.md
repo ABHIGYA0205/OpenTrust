@@ -158,7 +158,7 @@ From `python tools/evaluate.py --network network` (see `examples/evaluation.txt`
 | Metric | Result |
 | --- | --- |
 | Identical-payload campaign PRs caught | **30 / 30 (100%)** |
-| Paraphrased-payload PRs caught | 0 / 8 with Tier 1; Tier 2 required |
+| Paraphrased-payload PRs caught | 0 / 8 with Tier 1 alone; **8 / 8 with Tier 2** (`qwen3-embedding:0.6b`, see `examples/evaluation-tier2.txt`) |
 | Legitimate PRs falsely flagged | **0 / 12** |
 | Legitimate newcomers quarantined | **0 / 12** |
 | Bad actor (corroborated denouncements) | quarantined, score −4.08 |

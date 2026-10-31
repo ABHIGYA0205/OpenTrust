@@ -1,10 +1,8 @@
 open-weight models used by this project (all local, no cloud APIs)
 ------------------------------------------------------------------------------
-  qwen3:4b-instruct-2507-q4_K_M opentrust/llm.py           not running
+  qwen3:4b-instruct-2507-q4_K_M opentrust/llm.py           LIVE
     job: vouch/denounce reason -> structured scope + evidence strength
-  qwen3-embedding:0.6b   opentrust/similarity.py    not running
+  qwen3-embedding:0.6b   opentrust/similarity.py    LIVE
     job: Tier-2 paraphrased-PR similarity (campaign detection)
 ------------------------------------------------------------------------------
-some models are not reachable: the deterministic fallback is used and
-reported as source='fallback'. The product still runs. Start them with:
-  ollama pull qwen3:4b-instruct-2507-q4_K_M && ollama pull qwen3-embedding:0.6b
+both models reachable on localhost — no fallback in use

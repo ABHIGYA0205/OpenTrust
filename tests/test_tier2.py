@@ -73,4 +73,11 @@ def test_tier2_catches_paraphrased_payloads():
     flagged1 = {pr.pr_id for c in tier1 for pr in c.prs}
     flagged2 = {pr.pr_id for c in tier2 for pr in c.prs}
 
-    assert len(flagged2 & paraphrased) >= len(flagged1 & paraphrased)
+    legit = set(labels.get("legit", []))
+
+    # Tier 1 alone misses the reworded payloads; the embedding model finds all of
+    # them, as part of the same single campaign, without flagging any real PR.
+    assert len(flagged1 & paraphrased) < len(paraphrased)
+    assert flagged2 >= paraphrased
+    assert not flagged2 & legit
+    assert len(tier2) == 1

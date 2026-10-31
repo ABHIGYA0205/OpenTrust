@@ -20,6 +20,7 @@ python tools/evaluate.py --network network
 | `score-slop-account.txt` | A coordinated spammer denounced by three independently trusted projects → `QUARANTINED`, with the corroboration multiplier shown per record. |
 | `campaign-alert.txt` / `.json` | The campaign: 30 accounts, 30 projects, 107 minutes, mean payload similarity 1.00, 5 of 6 independent signals fired, with example near-identical PR pairs and the affected project list. |
 | `evaluation.txt` | Headline numbers: campaign recall 100% on identical payloads, 0 false positives on 12 legitimate PRs, 0 of 12 legitimate newcomers quarantined, runtime 0.32 s. |
+| `evaluation-tier2.txt` | Same run with the local embedding model on: all 8 reworded campaign PRs are caught (0 / 8 without it), still 0 false positives. The campaign comes out as 38 accounts across 38 projects. |
 | `trust-graph.dot` | The trust graph as Graphviz DOT, edge labels = declared weights. `dot -Tsvg trust-graph.dot -o trust-graph.svg` for the demo slide. |
 | `network-summary.txt` | Signature verification over the whole network: 320 records accepted, 0 rejected. |
 

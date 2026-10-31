@@ -99,15 +99,11 @@ def _cluster(prs: list[PR], policy: Policy, tier2: bool = False) -> list[list[st
     if len(prs) < 2:
         return []
     matrix = pairwise_similarity([pr.text for pr in prs])
+    semantic = None
     if tier2:
-        from .similarity import embedding_similarity
+        from .similarity import PR_INSTRUCTION, embedding_similarity
 
-        semantic = embedding_similarity([pr.text for pr in prs])
-        if semantic is not None:
-            matrix = [
-                [max(a, b) for a, b in zip(row_a, row_b)]
-                for row_a, row_b in zip(matrix, semantic)
-            ]
+        semantic = embedding_similarity([pr.text for pr in prs], instruction=PR_INSTRUCTION)
 
     uf = _UnionFind()
     for i, left in enumerate(prs):
@@ -118,7 +114,9 @@ def _cluster(prs: list[PR], policy: Policy, tier2: bool = False) -> list[list[st
                 continue
             if left.project == right.project:
                 continue
-            if matrix[i][j] >= policy.similarity_threshold:
+            if matrix[i][j] >= policy.similarity_threshold or (
+                semantic is not None and semantic[i][j] >= policy.semantic_threshold
+            ):
                 uf.union(left.author, right.author)
     return [sorted(group) for group in uf.groups().values() if len(group) >= policy.min_cohort_size]
 
