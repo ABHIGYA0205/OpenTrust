@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import urllib.error
 import urllib.request
 from dataclasses import dataclass, field
@@ -28,6 +29,8 @@ __all__ = [
     "ReasonAnalysis",
     "analyse_reason",
     "available",
+    "campaign_facts",
+    "grounded",
     "narrate_campaign",
 ]
 
@@ -218,22 +221,65 @@ def _fallback_analysis(text: str) -> ReasonAnalysis:
     )
 
 
-def narrate_campaign(evidence: dict, use_llm: bool = True, model: str = DEFAULT_MODEL) -> str:
-    """Maintainer-readable incident narrative, from numbers only.
+def campaign_facts(campaign) -> dict:
+    """The only facts a campaign narrative is allowed to mention."""
+    return {
+        "accounts": len(campaign.authors),
+        "pull_requests": len(campaign.prs),
+        "projects": len(campaign.affected_projects),
+        "minutes": campaign.window.get("minutes"),
+        "median_account_age_days": campaign.evidence.get("median_account_age_days"),
+        "mean_similarity": campaign.evidence.get("mean_pairwise_similarity"),
+        "triviality_rate": campaign.evidence.get("triviality_rate"),
+        "signals_fired": campaign.evidence.get("signals_fired"),
+        "signals_total": 6,
+        "score": campaign.score,
+        "sample_prs": campaign.evidence.get("sample_prs", [])[:5],
+        "sample_projects": campaign.affected_projects[:5],
+    }
 
-    The model may only restate values present in ``evidence``; if it is unavailable this
-    returns the deterministic template produced by the campaign engine.
+
+_NUMBER = re.compile(r"(?<![\w.])\d+(?:\.\d+)?")
+_IDENTIFIER = re.compile(r"\b(?:pr_[\w-]+|proj-[\w-]+)|@[\w-]+")
+
+
+def grounded(text: str, facts: dict) -> bool:
+    """True when every number and identifier in ``text`` appears in ``facts``."""
+    blob = json.dumps(facts, sort_keys=True)
+    allowed_numbers = {float(n) for n in _NUMBER.findall(blob)}
+    numbers_ok = all(float(n) in allowed_numbers for n in _NUMBER.findall(text))
+    names_ok = all(name in blob for name in _IDENTIFIER.findall(text))
+    return numbers_ok and names_ok
+
+
+def narrate_campaign(
+    facts: dict, fallback: str, use_llm: bool = True, model: str = DEFAULT_MODEL
+) -> tuple[str, str]:
+    """Maintainer-readable incident summary, written from ``facts`` only.
+
+    Returns ``(text, source)``. A reply that mentions a number, PR or project that is
+    not in ``facts`` is thrown away and ``fallback`` (the engine's own deterministic
+    sentence) is returned instead, with source ``"fallback"``.
     """
-    fallback = evidence.get("summary") or ""
     if not use_llm:
-        return fallback
+        return fallback, "fallback"
     prompt = (
-        "Write a 3-sentence incident summary for an open-source maintainer, using ONLY "
-        "the numbers given. Do not invent facts. Plain prose, no lists.\n\n"
-        f"Numbers: {json.dumps(evidence, sort_keys=True)[:1500]}\n"
+        "A coordinated spam campaign was detected across open-source projects. "
+        "Write a short alert for maintainers.\n"
+        'Return ONLY JSON: {"summary": "<two or three plain sentences>"}\n'
+        "Sentence 1: how many accounts sent how many pull requests to how many "
+        "projects, within how many minutes, and the median account age in days.\n"
+        "Sentence 2: why it looks coordinated (similarity, trivial changes, signals "
+        "fired out of total).\n"
+        "Sentence 3: maintainers should review these PRs together; nobody is "
+        "blocked automatically.\n"
+        "Use only the facts below. Do not add any number, PR id, project or account "
+        "that is not listed, and copy numbers exactly as written (0.84, not 84%). "
+        "Do not guess who is behind it or why.\n\n"
+        f"Facts: {json.dumps(facts, sort_keys=True)}\n"
     )
     parsed = _generate(prompt, model=model, temperature=0.2)
-    if not parsed:
-        return fallback
-    text = parsed.get("response") if isinstance(parsed, dict) else None
-    return (text or fallback)[:1200]
+    text = parsed.get("summary") if isinstance(parsed, dict) else None
+    if not isinstance(text, str) or not text.strip() or not grounded(text, facts):
+        return fallback, "fallback"
+    return " ".join(text.split())[:1200], "llm"

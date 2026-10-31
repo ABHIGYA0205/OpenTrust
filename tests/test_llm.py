@@ -103,3 +103,41 @@ def test_cli_analyse_command(capsys):
     payload = json.loads(capsys.readouterr().out)
     assert payload["scope"]
     assert payload["source"] == "fallback"
+
+
+# --- campaign narrative: the model may only restate the evidence ----------------
+
+FACTS = {
+    "accounts": 30,
+    "pull_requests": 30,
+    "projects": 30,
+    "minutes": 58,
+    "median_account_age_days": 3,
+    "mean_similarity": 1.0,
+    "sample_prs": ["pr_campaign_000", "pr_campaign_001"],
+    "sample_projects": ["proj-01", "proj-02"],
+}
+FALLBACK = "deterministic sentence from the campaign engine"
+
+
+def test_grounded_narrative_is_used(monkeypatch):
+    summary = "30 accounts sent 30 near-identical PRs to 30 projects in 58 minutes, including pr_campaign_000."
+    monkeypatch.setattr(llm, "_generate", lambda *a, **k: {"summary": summary})
+    assert llm.narrate_campaign(FACTS, FALLBACK) == (summary, "llm")
+
+
+def test_invented_number_is_thrown_away(monkeypatch):
+    monkeypatch.setattr(llm, "_generate", lambda *a, **k: {"summary": "45 accounts hit 30 projects."})
+    assert llm.narrate_campaign(FACTS, FALLBACK) == (FALLBACK, "fallback")
+
+
+def test_invented_pr_or_project_is_thrown_away(monkeypatch):
+    for bad in ("It started with pr_campaign_999.", "proj-77 was hit first.", "Run by @mastermind."):
+        monkeypatch.setattr(llm, "_generate", lambda *a, **k: {"summary": bad})
+        assert llm.narrate_campaign(FACTS, FALLBACK) == (FALLBACK, "fallback"), bad
+
+
+def test_narrative_falls_back_without_a_model(monkeypatch):
+    monkeypatch.setattr(llm, "_generate", lambda *a, **k: None)
+    assert llm.narrate_campaign(FACTS, FALLBACK) == (FALLBACK, "fallback")
+    assert llm.narrate_campaign(FACTS, FALLBACK, use_llm=False) == (FALLBACK, "fallback")

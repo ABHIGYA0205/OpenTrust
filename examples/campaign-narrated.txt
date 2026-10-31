@@ -1,0 +1,32 @@
+$ opentrust campaigns --incoming network/incoming --tier2 --narrate
+CAMPAIGN ALERT
+  score          : 0.72
+  cohort         : 38 accounts, 38 PRs, 38 projects
+  window         : 2026-10-31T23:01:00Z -> 2026-11-01T00:58:00Z (117 min)
+  similarity     : 0.63 (minhash+embedding)
+  account age    : median 3 days
+  triviality     : 1.00
+
+  signals:
+    similarity_density   0.63 ############
+    cohort_size          1.00 ####################
+    project_overlap      0.00 
+    burstiness           1.00 ####################
+    account_newness      0.91 ##################
+    triviality_rate      1.00 ####################
+
+  example near-identical pairs:
+    pr_campaign_026 ~ pr_campaign_002  jaccard 1.00  (proj-26, proj-c)
+    pr_campaign_026 ~ pr_campaign_027  jaccard 1.00  (proj-26, proj-27)
+    pr_campaign_026 ~ pr_campaign_024  jaccard 1.00  (proj-26, proj-y)
+    pr_campaign_026 ~ pr_campaign_006  jaccard 1.00  (proj-26, proj-g)
+    pr_campaign_026 ~ pr_campaign_004  jaccard 1.00  (proj-26, proj-e)
+
+  projects affected: proj-26, proj-27, proj-28, proj-29, proj-30, proj-31, proj-32, proj-33, proj-34, proj-35, proj-36, proj-37
+
+  38 accounts (median age 3 days) issued 38 near-identical pull requests to 38 projects within 117 minutes. Mean payload similarity 0.63; triviality rate 1.00. 5 of 6 independent signals fired.
+
+Summary for maintainers (via qwen3:4b-instruct-2507-q4_K_M, checked against the evidence):
+  38 accounts sent 38 pull requests to 38 projects within 117 minutes, with a median account age of 3.0 days. It looks coordinated due to a mean similarity of 0.626, a triviality rate of 1.0, and 5 signals fired out of 6 total. Maintainers should review these PRs together; nobody is blocked automatically.
+
+50 PRs analysed, 38 flagged across 1 campaign(s)
