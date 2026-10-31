@@ -253,6 +253,13 @@ def cmd_campaigns(args: argparse.Namespace) -> int:
             print(f"no campaigns detected across {len(prs)} PRs")
         for campaign in campaigns:
             print(render_campaign(campaign))
+            if args.narrate:
+                text, source = llm.narrate_campaign(
+                    llm.campaign_facts(campaign), fallback=campaign.explanation
+                )
+                via = llm.DEFAULT_MODEL if source == "llm" else "deterministic fallback"
+                print(f"\nSummary for maintainers (via {via}, checked against the evidence):")
+                print(f"  {text}")
             print()
         print(f"{len(prs)} PRs analysed, {len(flagged)} flagged across "
               f"{len(campaigns)} campaign(s)")
@@ -365,6 +372,8 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--min-cohort", type=int, default=5)
     p.add_argument("--tier2", action="store_true", help="add local embedding similarity")
     p.add_argument("--policy")
+    p.add_argument("--narrate", action="store_true",
+                   help="add a plain-English summary from the local model, fact-checked")
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_campaigns)
 
