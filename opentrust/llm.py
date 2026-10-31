@@ -261,8 +261,15 @@ def narrate_campaign(
     if not use_llm:
         return fallback, "fallback"
     prompt = (
-        "You write incident summaries for open-source maintainers.\n"
+        "A coordinated spam campaign was detected across open-source projects. "
+        "Write a short alert for maintainers.\n"
         'Return ONLY JSON: {"summary": "<two or three plain sentences>"}\n'
+        "Sentence 1: how many accounts sent how many pull requests to how many "
+        "projects, within how many minutes, and the median account age in days.\n"
+        "Sentence 2: why it looks coordinated (similarity, trivial changes, signals "
+        "fired out of total).\n"
+        "Sentence 3: maintainers should review these PRs together; nobody is "
+        "blocked automatically.\n"
         "Use only the facts below. Do not add any number, PR id, project or account "
         "that is not listed, and copy numbers exactly as written (0.84, not 84%). "
         "Do not guess who is behind it or why.\n\n"
