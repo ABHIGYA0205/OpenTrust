@@ -28,7 +28,7 @@ Here's how we plan to answer those questions in the first version:
 
 - **Lists are signed.** Every project has an Ed25519 key and signs its trust file. Anyone can check that a record really came from that project and wasn't changed along the way. We're not using a blockchain. Signed files are enough for this, and they're much easier to run.
 - **Trust doesn't spread on its own.** A project picks the peers it trusts. By default we follow one hop: if A trusts B, A sees B's vouches, but A doesn't automatically trust everyone B trusts. A project can allow more hops in its policy, and each extra hop counts for less.
-- **One denouncement is an allegation, not a verdict.** A single denouncement with no linked evidence is shown to maintainers but doesn't block anyone. Before we recommend blocking someone, we need evidence, or denouncements from more than one independent project you trust. Records can be disputed, and they expire.
+- **One denouncement is an allegation, not a verdict.** A single denouncement with no linked evidence is shown to maintainers but doesn't block anyone. Before we recommend blocking someone, we need evidence, or denouncements from more than one independent project you trust. A project can retract its own records, and they expire.
 - **Unknown doesn't mean suspicious.** A newcomer with no history goes through normal review. They only get flagged if their PR actually turns up inside a detected campaign.
 - **Campaigns are detected from behaviour, not writing style.** We look at signals together: near-duplicate PRs (identical or reworded), tight timing across repos, very new accounts, and the same kind of low-value change repeated. We don't try to guess whether text was written by AI. Lots of good contributors use AI tools, and spammers can make text look human with no effort, so that check doesn't tell you much.
 
@@ -40,14 +40,14 @@ We use two open-weight models. Both are Apache-2.0 and both run locally through 
 
 | Model | Runs via | What it does in OpenTrust |
 |---|---|---|
-| `qwen3:4b-instruct-2507-q4_K_M` (Qwen3-4B-Instruct-2507) | Ollama | Reads a PR (title, description, diff) and returns structured JSON: what kind of change it is, whether it changes anything real, and short notes. It also writes the plain-English summary of a detected campaign from the evidence we've already computed. |
+| `qwen3:4b-instruct-2507-q4_K_M` (Qwen3-4B-Instruct-2507) | Ollama | Reads the free-text reason on every vouch and denouncement and returns structured JSON: what area it covers and how checkable the evidence is. That evidence score decides whether a single denouncement can block someone or is only shown as an allegation. It also writes the plain-English summary of a detected campaign from the evidence we've already computed. |
 | `qwen3-embedding:0.6b` (Qwen3-Embedding 0.6B) | Ollama | Turns each PR into a vector so we can find PRs across different repos that say the same thing in different words. |
 
 ### Why Qwen3-4B-Instruct-2507
 
 Our main dev machine is a MacBook Pro M3 with 8 GB of memory, and that decided a lot. macOS, a browser and our dev servers already take about half of it, so both models together have to stay around 3–4 GB.
 
-- The job is narrow: read a diff and fill in a fixed JSON schema. A 4B model is plenty for that.
+- The job is narrow: read a short reason and fill in a fixed JSON schema. A 4B model is plenty for that.
 - The 4-bit build is 2.5 GB. Together with the embedding model it's about 3.2 GB, which leaves room for everything else on an 8 GB laptop.
 - We use the instruct version on purpose. Plain `qwen3:4b` on Ollama is the thinking variant, which writes out its reasoning before answering. That makes it slower, and we don't need it for classification.
 - It follows instructions well for its size (83.4 on IFEval according to the model card) and has a long context, so big diffs won't break anything. We still trim diffs, and we cap the context we actually load to keep memory down.
@@ -69,6 +69,10 @@ Using the same model family for both jobs also means one runtime and one set of 
 The models don't make trust decisions. Trust scores, policy checks, signature verification and graph clustering are all plain deterministic code that gives the same answer every run. The models only supply inputs (a classification, a similarity score) and a written summary.
 
 If a model returns something we can't trust, like JSON that doesn't match the schema or a summary that mentions a PR that isn't in the cluster, we throw it away instead of showing it. If Ollama isn't running, OpenTrust still works. It just runs without the semantic signals and says so in its output.
+
+### Changes since the first commit
+
+We first planned to have the 4B model read each PR's diff and classify it. Once the campaign detector was working, the behavioural signals (near-duplicate text, timing, account age, which files a PR touches) already separated the spam from real work on their own. So we pointed the model at the one input those signals can't read: the free-text reason someone writes when they vouch for or denounce a contributor. "Low quality contribution" and "reproduced the crash, see #311" should not count the same, and now they don't.
 
 ### If this changes
 

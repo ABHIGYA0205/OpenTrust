@@ -176,6 +176,22 @@ From `python tools/evaluate.py --network network` (see `examples/evaluation.txt`
 | Vouched newcomer | trusted, score +0.15 |
 | Runtime | 0.3 s for 50 PRs, 40 projects |
 
+## How this answers Problem 07
+
+Every line in this table can be checked by running the command or the test.
+
+| What the problem asks | How OpenTrust does it | Check it |
+| --- | --- | --- |
+| Projects keep public vouch and denouncement records | One signed record per file in each project's `trust/records/`. Existing Vouch `VOUCHED.td` lists can be imported and exported | `opentrust sync`, `tests/test_crypto.py`, `tests/test_vouchfile.py` |
+| Projects exchange trust information | Plain files distributed by git; each record is Ed25519-signed and verified on load, so a copy from anywhere can be checked | `opentrust sync` (320 records verified, 0 rejected) |
+| A trusts B, B trusts C: how does A see C? | One hop by default. A project can allow more hops in its policy; each extra hop counts for less | `tests/test_eigentrust.py::test_one_hop_by_default_more_on_request` |
+| Bad or inaccurate denouncements can't ruin someone | Denouncements from projects you don't trust carry no weight. One trusted denouncement with weak evidence is shown as an allegation, not a block. Blocking needs corroboration from a second independent project or checkable evidence | `tests/test_reputation.py`, `examples/score-new-dev-as-seen-by-proj-x.txt` |
+| Detect coordinated campaigns across projects | Clusters near-duplicate PRs, then scores six behavioural signals (similarity, burst timing, account age, project spread, cohort size, trivial changes) | `opentrust campaigns`, `tests/test_end_to_end.py` |
+| Honest newcomers aren't excluded | No history means `unknown`, never `quarantined`. Newcomers get normal review | `tests/test_end_to_end.py::test_legit_newcomers_are_not_quarantined` (0 / 12 quarantined) |
+| Newcomers can build trust | One vouch from a project you trust is enough to reach `trusted` | `tests/test_reputation.py::test_vouch_from_trusted_project_makes_contributor_trusted` |
+| No central authority | No server and no shared database. Every project computes its own view from the records it chooses to trust | `opentrust score --viewer proj-a` vs `--viewer proj-x` |
+| Why AI-text detection alone isn't enough | We don't use it. Plenty of good contributors write with AI tools, and spam can be made to read as human. Behaviour across many projects is much harder to fake | `opentrust/campaign.py` |
+
 ## Repository layout
 
 ```
