@@ -42,6 +42,11 @@ class Policy:
     half_life_days: float = 180.0
     # Campaign detection.
     similarity_threshold: float = 0.85
+    # Cosine threshold for Tier-2 embeddings. Embedding scores sit on a different
+    # scale from shingle overlap: on the fixture network reworded spam scores
+    # >= 0.85 against the campaign and unrelated real PRs <= 0.36, so 0.80 keeps a
+    # wide margin on both sides.
+    semantic_threshold: float = 0.80
     min_cohort_size: int = 5
     campaign_window_minutes: int = 120
     min_campaign_signals: int = 3
