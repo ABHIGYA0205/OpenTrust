@@ -151,7 +151,7 @@ Derived features:
 ### 4.2 Two-tier similarity — this is where the open model earns its points
 
 - **Tier 1, MinHash + LSH** over 5-gram token shingles of title+body+diff. Deterministic, O(n) with banding, catches exact and near duplicates at 0.9+ Jaccard. Fast enough for hundreds of PRs.
-- **Tier 2, open-weight embeddings** (`nomic-embed-text` via Ollama): cosine ≥ 0.85 catches **paraphrased** slop that shingles miss — the same generated blurb reworded per repo. This is genuinely necessary, not decorative, and it's the honest answer to "why does your model matter?"
+- **Tier 2, open-weight embeddings** (`qwen3-embedding:0.6b` via Ollama): cosine ≥ 0.85 catches **paraphrased** slop that shingles miss — the same generated blurb reworded per repo. This is genuinely necessary, not decorative, and it's the honest answer to "why does your model matter?"
 
 Keep both, report which tier fired. That distinction is a great slide: "Tier 1 found 31 duplicates; Tier 2 found 7 more that were reworded."
 
@@ -265,12 +265,12 @@ That answer also converts your LLM usage from a liability into a design virtue: 
 
 | Job | Model | Why it's not decorative |
 |---|---|---|
-| Semantic duplicate detection (Tier 2) | `nomic-embed-text` (Ollama) | catches paraphrased campaign payloads shingles miss — a measurable recall gain you can report |
-| Vouch/denounce **scope + evidence-quality** parsing | `qwen2.5:7b-instruct` or `llama3.1:8b` (Ollama) | turns free-text reasons into structured `scope[]` and an evidence-strength score that feeds corroboration requirements |
+| Semantic duplicate detection (Tier 2) | `qwen3-embedding:0.6b` (Ollama) | catches paraphrased campaign payloads shingles miss — a measurable recall gain you can report |
+| Vouch/denounce **scope + evidence-quality** parsing | `qwen3:4b-instruct-2507-q4_K_M` (Ollama) | turns free-text reasons into structured `scope[]` and an evidence-strength score that feeds corroboration requirements |
 | Incident report narrative | same | writes the human-readable campaign report, quoting only numbers/citations produced by code |
 | Newcomer context note | same | neutral "what this person actually did" summary for the maintainer |
 
-Justification line for `HACKATHON.md`: *"qwen2.5:7b-instruct via Ollama — best local trade-off on short structured-extraction tasks at 4-bit; nomic-embed-text — small, fast, strong paraphrase retrieval, runs on CPU. No cloud APIs; verdicts are deterministic, models only produce features and explanations."*
+Justification line for `HACKATHON.md`: *"qwen3:4b-instruct-2507-q4_K_M via Ollama — best local trade-off on short structured-extraction tasks at 4-bit; qwen3-embedding:0.6b — small, fast, strong paraphrase retrieval, runs on CPU. No cloud APIs; verdicts are deterministic, models only produce features and explanations."*
 
 ---
 

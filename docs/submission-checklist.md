@@ -28,7 +28,7 @@ git add HACKATHON.md
 git commit -m "docs: team, problem statement and AI models
 
 Coding agent: <yours>
-Models used in project: qwen2.5:7b-instruct, nomic-embed-text"
+Models used in project: qwen3:4b-instruct-2507-q4_K_M, qwen3-embedding:0.6b"
 # create the public GitHub repo (empty), then:
 git remote add origin git@github.com:<you>/opentrust.git
 git push -u origin main
@@ -87,7 +87,7 @@ git push -u origin main
 - [ ] No secrets: no `*.key`, no `.env`, no tokens in history
       (`git log -p --all | grep -iE 'api[_-]?key|secret|token'` should be clean)
 - [ ] Models named in `HACKATHON.md` are **actually used by the code**
-      (`qwen2.5:7b-instruct` → `opentrust/llm.py`; `nomic-embed-text` → `opentrust/similarity.py`)
+      (`qwen3:4b-instruct-2507-q4_K_M` → `opentrust/llm.py`; `qwen3-embedding:0.6b` → `opentrust/similarity.py`)
 - [ ] Every commit message names the coding agent + models (`.gitmessage` template)
 
 ## 7. Six minutes before 6:30 AM

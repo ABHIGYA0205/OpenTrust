@@ -29,7 +29,7 @@ python tools/evaluate.py --network network
 
 - **30 identical payloads** — caught by Tier 1 (MinHash shingles). See `campaign-alert.json`.
 - **8 paraphrased payloads** — the same intent, individually reworded. Tier 1 is blind to
-  these by construction; they are recovered only by Tier 2 (local `nomic-embed-text`
+  these by construction; they are recovered only by Tier 2 (local `qwen3-embedding:0.6b`
   embeddings via Ollama). With no model server running, `opentrust` reports Tier 1 only
   and says so, instead of failing.
 

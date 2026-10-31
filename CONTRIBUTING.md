@@ -6,7 +6,7 @@
 Every commit message and every pull request must name:
 
 1. the **AI coding agent** that helped write it (Copilot, Cursor, Claude Code, ChatGPT, or `none`)
-2. the **open-weight models the product uses** (`qwen2.5:7b-instruct`, `nomic-embed-text`, or `none in this change`)
+2. the **open-weight models the product uses** (`qwen3:4b-instruct-2507-q4_K_M`, `qwen3-embedding:0.6b`, or `none in this change`)
 
 Example:
 
@@ -14,7 +14,7 @@ Example:
 Add campaign cohort clustering
 
 Coding agent: Claude Code
-Models used in project: qwen2.5:7b-instruct, nomic-embed-text
+Models used in project: qwen3:4b-instruct-2507-q4_K_M, qwen3-embedding:0.6b
 ```
 
 ## Workflow
