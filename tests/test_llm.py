@@ -76,6 +76,26 @@ def test_unreachable_model_falls_back(monkeypatch):
     assert analysis.source == "fallback"
 
 
+def _fake_tags(monkeypatch, names):
+    import io
+
+    body = json.dumps({"models": [{"name": n} for n in names]}).encode()
+    monkeypatch.setattr(llm.urllib.request, "urlopen", lambda *a, **k: io.BytesIO(body))
+
+
+def test_available_needs_the_exact_tag(monkeypatch):
+    """Having only the embedding model pulled must not count as having the 4B model."""
+    _fake_tags(monkeypatch, ["qwen3-embedding:0.6b"])
+    assert not llm.available("qwen3:4b-instruct-2507-q4_K_M")
+    assert llm.available("qwen3-embedding:0.6b")
+
+
+def test_available_treats_untagged_as_latest(monkeypatch):
+    _fake_tags(monkeypatch, ["qwen3:latest"])
+    assert llm.available("qwen3")
+    assert not llm.available("qwen3:4b-instruct-2507-q4_K_M")
+
+
 def test_cli_analyse_command(capsys):
     from opentrust.cli import main
 

@@ -91,7 +91,10 @@ def available(model: str = DEFAULT_MODEL) -> bool:
     except (urllib.error.URLError, OSError, ValueError, TimeoutError):
         return False
     names = {entry.get("name", "") for entry in tags.get("models", [])}
-    return any(name == model or name.startswith(model.split(":")[0]) for name in names)
+    # Exact tag match. A prefix match would report the 4B model as present when
+    # only qwen3-embedding is pulled. Ollama lists untagged pulls as ":latest".
+    wanted = model if ":" in model else f"{model}:latest"
+    return wanted in names
 
 
 def _generate(prompt: str, model: str = DEFAULT_MODEL, temperature: float = 0.0) -> dict | None:
