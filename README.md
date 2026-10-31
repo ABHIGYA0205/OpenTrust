@@ -161,7 +161,7 @@ From `python tools/evaluate.py --network network` (see `examples/evaluation.txt`
 | Paraphrased-payload PRs caught | 0 / 8 with Tier 1; Tier 2 required |
 | Legitimate PRs falsely flagged | **0 / 12** |
 | Legitimate newcomers quarantined | **0 / 12** |
-| Bad actor (corroborated denouncements) | quarantined, score −4.29 |
+| Bad actor (corroborated denouncements) | quarantined, score −4.08 |
 | Vouched newcomer | trusted, score +0.15 |
 | Runtime | 0.3 s for 50 PRs, 40 projects |
 
