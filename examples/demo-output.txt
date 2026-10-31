@@ -1,0 +1,186 @@
+
+== 1. Forty projects, each with its own signed trust records. Nothing central.
+$ opentrust sync --manifest network/manifest.json
+network: 40 projects
+
+  project         records  vouch  denounce  edges
+  proj-26               8      2         0      6
+  proj-27               8      2         0      6
+  proj-28               8      2         0      6
+signatures verified: 320 records, 0 rejected
+
+== 2. A spam campaign hits the network. No single maintainer could see it.
+$ opentrust campaigns --incoming network/incoming --tier2 --narrate
+CAMPAIGN ALERT
+  score          : 0.72
+  cohort         : 38 accounts, 38 PRs, 38 projects
+  window         : 2026-10-31T23:01:00Z -> 2026-11-01T00:58:00Z (117 min)
+  similarity     : 0.63 (minhash+embedding)
+  account age    : median 3 days
+  triviality     : 1.00
+
+  signals:
+    similarity_density   0.63 ############
+    cohort_size          1.00 ####################
+    project_overlap      0.00 
+    burstiness           1.00 ####################
+    account_newness      0.91 ##################
+    triviality_rate      1.00 ####################
+
+  example near-identical pairs:
+    pr_campaign_026 ~ pr_campaign_002  jaccard 1.00  (proj-26, proj-c)
+    pr_campaign_026 ~ pr_campaign_027  jaccard 1.00  (proj-26, proj-27)
+    pr_campaign_026 ~ pr_campaign_024  jaccard 1.00  (proj-26, proj-y)
+    pr_campaign_026 ~ pr_campaign_006  jaccard 1.00  (proj-26, proj-g)
+    pr_campaign_026 ~ pr_campaign_004  jaccard 1.00  (proj-26, proj-e)
+
+  projects affected: proj-26, proj-27, proj-28, proj-29, proj-30, proj-31, proj-32, proj-33, proj-34, proj-35, proj-36, proj-37
+
+  38 accounts (median age 3 days) issued 38 near-identical pull requests to 38 projects within 117 minutes. Mean payload similarity 0.63; triviality rate 1.00. 5 of 6 independent signals fired.
+
+Summary for maintainers (via qwen3:4b-instruct-2507-q4_K_M, checked against the evidence):
+  38 accounts sent 38 pull requests to 38 projects within 117 minutes, and the median account age is 3.0 days. It looks coordinated due to a mean similarity of 0.626, a triviality rate of 1.0, and 5 signals fired out of 6 total. Maintainers should review these PRs together; nobody is blocked automatically.
+
+50 PRs analysed, 38 flagged across 1 campaign(s)
+
+== 3. @new-dev, seen from proj-a: let in on a vouch from proj-b, which proj-a trusts. proj-x's denouncement is ignored.
+$ opentrust score --manifest network/manifest.json --subject github:@new-dev --viewer proj-a
+Subject  : github:@new-dev
+Viewpoint: proj-a
+Verdict  : TRUSTED   (score +0.151)
+Counted vouches:
+  + 0.151  vouch by proj-b (trust 0.151, scope code_quality) — Fixed a real null-dereference and added the regression test.
+Ignored statements (issuer carries no weight from this viewpoint):
+  · [denounce] proj-x (trust 0.000) — issuer trust 0.000 is below the min_denounce_trust 0.10
+
+trust weights as seen by proj-a:
+  proj-a         0.541
+  proj-d         0.164
+  proj-b         0.151
+  proj-c         0.145
+
+== 4. Same person, seen from proj-x. proj-x's opinion only governs proj-x.
+$ opentrust score --manifest network/manifest.json --subject github:@new-dev --viewer proj-x
+Subject  : github:@new-dev
+Viewpoint: proj-x
+Verdict  : QUARANTINED   (score -1.419)
+Counted vouches:
+  + 0.080  vouch by proj-b (trust 0.080, scope code_quality) — Fixed a real null-dereference and added the regression test.
+Counted denouncements:
+  - 1.499  denounce by proj-x (trust 1.000, severity high, corroboration x1.00) — Low quality contribution.
+
+trust weights as seen by proj-x:
+  proj-x         0.541
+  proj-c         0.084
+  proj-d         0.083
+  proj-a         0.081
+  proj-b         0.080
+  proj-q         0.058
+  proj-t         0.055
+  proj-y         0.018
+
+== 5. A genuinely bad account, denounced by three projects proj-a trusts, with evidence.
+$ opentrust score --manifest network/manifest.json --subject github:@slop-account --viewer proj-a
+Subject  : github:@slop-account
+Viewpoint: proj-a
+Verdict  : QUARANTINED   (score -4.076)
+Counted denouncements:
+  - 3.146  denounce by proj-a (trust 1.000, severity high, corroboration x2.10) — Identical docs-only PR sent to dozens of projects in one hour.
+  - 0.474  denounce by proj-b (trust 0.151, severity high, corroboration x2.10) — Identical docs-only PR sent to dozens of projects in one hour.
+  - 0.456  denounce by proj-c (trust 0.145, severity high, corroboration x2.10) — Identical docs-only PR sent to dozens of projects in one hour.
+
+trust weights as seen by proj-a:
+  proj-a         0.541
+  proj-d         0.164
+  proj-b         0.151
+  proj-c         0.145
+
+== 6. A newcomer nobody knows yet: unknown, not rejected.
+$ opentrust score --manifest network/manifest.json --subject github:@newcomer-05 --viewer proj-a
+Subject  : github:@newcomer-05
+Viewpoint: proj-a
+Verdict  : UNKNOWN   (score +0.000)
+History  : no records — status is UNKNOWN, which is not a rejection.
+
+trust weights as seen by proj-a:
+  proj-a         0.541
+  proj-d         0.164
+  proj-b         0.151
+  proj-c         0.145
+
+== 7. One vague denouncement from a trusted project is an allegation, not a block.
+$ opentrust denounce --project proj-b --out proj-b --subject github:@accused --reason Low quality contribution. --evidence https://github.com/example/proj-b/pull/12 --severity high
+evidence strength: 0.10 (Bare opinion with no supporting artefact., via llm)
+denounce recorded: sha256:da80703141c028a7dd6f7764773c61dc9dc96e34060f3b46a592962e8f1b7b1d
+$ opentrust score --manifest manifest.json --subject github:@accused --viewer proj-a
+Subject  : github:@accused
+Viewpoint: proj-a
+Verdict  : UNKNOWN   (score -0.345)
+Allegation: one uncorroborated denouncement with weak evidence. Shown for review, not enforced.
+Counted denouncements:
+  - 0.345  denounce by proj-b (trust 0.230, severity high, corroboration x1.00) — Low quality contribution.
+
+trust weights as seen by proj-a:
+  proj-a         0.541
+  proj-b         0.230
+  proj-c         0.230
+
+== 8. A second trusted project independently says the same thing: now it counts.
+$ opentrust denounce --project proj-c --out proj-c --subject github:@accused --reason Same copy-paste PR as proj-b received. --evidence https://github.com/example/proj-c/pull/40 --severity high
+evidence strength: 0.10 (Bare opinion with no supporting artefact., via llm)
+denounce recorded: sha256:bf1a56897d186df23edf4416314ce58735decf80173c2b4c386070a88a528603
+$ opentrust score --manifest manifest.json --subject github:@accused --viewer proj-a
+Subject  : github:@accused
+Viewpoint: proj-a
+Verdict  : QUARANTINED   (score -1.167)
+Counted denouncements:
+  - 0.583  denounce by proj-b (trust 0.230, severity high, corroboration x1.69) — Low quality contribution.
+  - 0.583  denounce by proj-c (trust 0.230, severity high, corroboration x1.69) — Same copy-paste PR as proj-b received.
+
+trust weights as seen by proj-a:
+  proj-a         0.541
+  proj-b         0.230
+  proj-c         0.230
+
+== 9. And with no AI model at all, it still works.
+$ opentrust campaigns --incoming network/incoming
+CAMPAIGN ALERT
+  score          : 0.84
+  cohort         : 30 accounts, 30 PRs, 30 projects
+  window         : 2026-10-31T23:01:00Z -> 2026-11-01T00:48:00Z (107 min)
+  similarity     : 1.00 (minhash)
+  account age    : median 3 days
+  triviality     : 1.00
+
+  signals:
+    similarity_density   1.00 ####################
+    cohort_size          1.00 ####################
+    project_overlap      0.00 
+    burstiness           1.00 ####################
+    account_newness      0.91 ##################
+    triviality_rate      1.00 ####################
+
+  example near-identical pairs:
+    pr_campaign_026 ~ pr_campaign_002  jaccard 1.00  (proj-26, proj-c)
+    pr_campaign_026 ~ pr_campaign_027  jaccard 1.00  (proj-26, proj-27)
+    pr_campaign_026 ~ pr_campaign_024  jaccard 1.00  (proj-26, proj-y)
+    pr_campaign_026 ~ pr_campaign_006  jaccard 1.00  (proj-26, proj-g)
+    pr_campaign_026 ~ pr_campaign_004  jaccard 1.00  (proj-26, proj-e)
+
+  projects affected: proj-26, proj-27, proj-28, proj-29, proj-a, proj-b, proj-c, proj-d, proj-e, proj-f, proj-g, proj-h
+
+  30 accounts (median age 3 days) issued 30 near-identical pull requests to 30 projects within 107 minutes. Mean payload similarity 1.00; triviality rate 1.00. 5 of 6 independent signals fired.
+
+50 PRs analysed, 30 flagged across 1 campaign(s)
+$ opentrust analyse --kind denounce --reason Low quality contribution. --no-llm
+{
+  "scope": [
+    "code_quality"
+  ],
+  "evidence_strength": 0.25,
+  "rationale": "Opinion only: no artefact referenced.",
+  "source": "fallback",
+  "model": null
+}
+
+Done. Every verdict above came from deterministic code; the models only supplied inputs and the summary.

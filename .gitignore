@@ -22,3 +22,8 @@ network/.keys/
 # Generated outputs
 out/
 *.log
+
+# macOS
+.DS_Store
+.AppleDouble
+._*
